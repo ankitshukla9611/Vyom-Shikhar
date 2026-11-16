@@ -1,0 +1,1003 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VyomShikhar | Literary World</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --green:#244b3b;
+    --deep:#173629;
+    --gold:#b58a4a;
+    --cream:#f8f6ef;
+    --paper:#fffefa;
+    --text:#29372e;
+    --muted:#788078;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+}
+
+button,input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    min-height:430px;
+    background:
+    linear-gradient(90deg,rgba(17,48,35,.95),rgba(17,48,35,.67)),
+    url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1800')
+    center/cover;
+
+    display:flex;
+    align-items:center;
+    color:white;
+    padding:75px 0;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.eyebrow{
+    color:#dfc18b;
+    letter-spacing:4px;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(38px,6vw,68px);
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#e0e9e2;
+    line-height:1.9;
+    font-size:16px;
+    max-width:650px;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:28px;
+    padding:14px 27px;
+    background:#d4b47b;
+    color:#193728;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    padding:75px 15px 35px;
+}
+
+.section-label{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.intro h2,.section-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(29px,4vw,43px);
+    margin:13px 0;
+    color:var(--deep);
+}
+
+.intro p{
+    max-width:680px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* FOUR WORLDS */
+
+.world-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:35px 0 75px;
+}
+
+.world-card{
+    background:var(--paper);
+    padding:30px 23px;
+    border:1px solid #e9e4d8;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.world-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px #263e2914;
+}
+
+.world-icon{
+    width:52px;
+    height:52px;
+    display:grid;
+    place-items:center;
+    background:#edf1e9;
+    border-radius:50%;
+    font-size:24px;
+    margin-bottom:22px;
+}
+
+.world-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.world-card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.8;
+}
+
+.world-card a{
+    display:inline-block;
+    margin-top:20px;
+    color:var(--green);
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* COMMON SECTIONS */
+
+.library-section{
+    padding:75px 0;
+}
+
+.section-heading{
+    margin-bottom:30px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    line-height:1.8;
+    max-width:700px;
+}
+
+.book-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.book-card{
+    background:var(--paper);
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid #e9e4d8;
+    transition:.3s;
+}
+
+.book-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px #263e2914;
+}
+
+.book-cover{
+    height:225px;
+    width:100%;
+    object-fit:cover;
+    background:#e8e2d5;
+}
+
+.book-info{
+    padding:20px;
+}
+
+.book-category{
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:2px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.book-info h3{
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+    margin:12px 0 8px;
+}
+
+.book-info p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+}
+
+.book-actions{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin-top:18px;
+}
+
+.read-btn{
+    background:var(--green);
+    color:white;
+    border:0;
+    padding:10px 15px;
+    border-radius:4px;
+    font-size:12px;
+}
+
+.fav-btn{
+    background:#f4eee4;
+    color:#7c5940;
+    border:0;
+    padding:9px 12px;
+    border-radius:4px;
+}
+
+/* BOOK ADDICTED */
+
+.addicted{
+    background:#f0eee5;
+}
+
+/* NOVEL NOTES */
+
+.notes{
+    background:#fffefa;
+}
+
+.note-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.note-card{
+    background:#f8f5ec;
+    padding:30px;
+    border-left:4px solid var(--gold);
+    border-radius:5px;
+}
+
+.note-card span{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.note-card h3{
+    font-family:'Playfair Display',serif;
+    margin:15px 0;
+    font-size:23px;
+}
+
+.note-card p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* SUMMARY */
+
+.summary{
+    background:#e9eee7;
+}
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.summary-card{
+    background:white;
+    padding:28px;
+    border-radius:9px;
+}
+
+.summary-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:23px;
+    margin:13px 0;
+}
+
+.summary-card p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:14px;
+}
+
+.summary-card strong{
+    display:block;
+    color:var(--green);
+    margin-top:17px;
+    font-size:13px;
+}
+
+/* READING COLLECTION */
+
+.collection{
+    background:#fffefa;
+}
+
+.collection-tools{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.collection-tools input{
+    flex:1;
+    min-width:220px;
+    padding:13px 16px;
+    border:1px solid #ddd8ca;
+    border-radius:5px;
+    outline:none;
+    background:white;
+}
+
+.filter-btn{
+    padding:12px 17px;
+    background:#efeee6;
+    border:0;
+    border-radius:5px;
+    color:var(--green);
+}
+
+.filter-btn.active{
+    background:var(--green);
+    color:white;
+}
+
+.progress-area{
+    margin-top:20px;
+    background:#f1f2e9;
+    padding:24px;
+    border-radius:8px;
+}
+
+.progress-area h3{
+    font-family:'Playfair Display',serif;
+    margin-bottom:10px;
+}
+
+.progress-bar{
+    height:9px;
+    background:#d8dfd4;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:15px;
+}
+
+.progress-fill{
+    height:100%;
+    width:65%;
+    background:var(--green);
+    border-radius:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--deep);
+    color:#e5e9e1;
+    text-align:center;
+    padding:45px 20px;
+}
+
+footer h2{
+    font-family:'Playfair Display',serif;
+    margin-bottom:12px;
+}
+
+footer p{
+    color:#c1cec3;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+    .world-grid,.book-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+    .container{
+        width:92%;
+    }
+
+    .hero{
+        min-height:400px;
+    }
+
+    .world-grid,.book-grid,
+    .note-grid,.summary-grid{
+        grid-template-columns:1fr;
+    }
+
+    .library-section{
+        padding:55px 0;
+    }
+
+    .intro{
+        padding-top:55px;
+    }
+
+    .book-cover{
+        height:260px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+<div class="container">
+<div class="hero-content">
+
+<div class="eyebrow">The Art of Reading & Knowledge</div>
+
+<h1>Beyond Books,<br>Into Worlds of Ideas.</h1>
+
+<p>
+Discover extraordinary stories, explore the philosophy
+of great novels, understand powerful ideas and build
+a personal collection of knowledge.
+</p>
+
+<a href="#book-addicted" class="hero-btn">
+Explore Literary World →
+</a>
+
+</div>
+</div>
+</header>
+
+<!-- INTRO -->
+
+<section class="intro container">
+
+<div class="section-label">A Universe of Literature</div>
+
+<h2>Where Every Book Opens a New World</h2>
+
+<p>
+Reading is more than turning pages. It is an exploration
+of imagination, human experience, philosophy and knowledge.
+Welcome to a space created for curious minds and passionate readers.
+</p>
+
+</section>
+
+<!-- FOUR WORLDS -->
+
+<section class="container">
+<div class="world-grid">
+
+<div class="world-card">
+<div class="world-icon">📚</div>
+<h3>Book Addicted</h3>
+<p>Discover remarkable books, inspiring authors and stories worth remembering.</p>
+<a href="#book-addicted">Discover Books →</a>
+</div>
+
+<div class="world-card">
+<div class="world-icon">✍️</div>
+<h3>Novel Notes</h3>
+<p>Explore characters, literary themes, observations and meaningful ideas.</p>
+<a href="#novel-notes">Explore Notes →</a>
+</div>
+
+<div class="world-card">
+<div class="world-icon">📖</div>
+<h3>Book Summary</h3>
+<p>Understand powerful books through concise summaries and essential lessons.</p>
+<a href="#book-summary">Read Summaries →</a>
+</div>
+
+<div class="world-card">
+<div class="world-icon">🏛️</div>
+<h3>Reading Collection</h3>
+<p>Explore a growing collection of literature, knowledge and intellectual works.</p>
+<a href="#reading-collection">View Collection →</a>
+</div>
+
+</div>
+</section>
+
+<!-- BOOK ADDICTED -->
+
+<section class="library-section addicted" id="book-addicted">
+<div class="container">
+
+<div class="section-heading">
+<div class="section-label">For Passionate Readers</div>
+<h2>Book Addicted</h2>
+<p>
+Some books entertain us. Some challenge our beliefs.
+Others change the way we see the world. Discover books
+that deserve a place in your reading journey.
+</p>
+</div>
+
+<div class="book-grid">
+
+<div class="book-card">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/The%20Alchemist-M.jpg" alt="The Alchemist">
+<div class="book-info">
+<span class="book-category">Philosophical Fiction</span>
+<h3>The Alchemist</h3>
+<p>Paulo Coelho · A journey of dreams, destiny and self-discovery.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('The Alchemist','A philosophical journey about following your dreams, discovering your purpose and recognizing the meaning of personal destiny.')">Explore Book</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+<div class="book-card">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/1984-M.jpg" alt="1984">
+<div class="book-info">
+<span class="book-category">Dystopian Fiction</span>
+<h3>1984</h3>
+<p>George Orwell · A powerful exploration of surveillance, power and freedom.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('1984','A dystopian novel exploring authoritarianism, surveillance, manipulation of truth and individual freedom.')">Explore Book</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+<div class="book-card">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/Siddhartha-M.jpg" alt="Siddhartha">
+<div class="book-info">
+<span class="book-category">Spiritual Fiction</span>
+<h3>Siddhartha</h3>
+<p>Hermann Hesse · An exploration of wisdom, experience and inner peace.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('Siddhartha','A journey of spiritual exploration, self-understanding and the search for wisdom through personal experience.')">Explore Book</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+<div class="book-card">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/To%20Kill%20a%20Mockingbird-M.jpg" alt="To Kill a Mockingbird">
+<div class="book-info">
+<span class="book-category">Classic Literature</span>
+<h3>To Kill a Mockingbird</h3>
+<p>Harper Lee · Justice, morality, empathy and human dignity.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('To Kill a Mockingbird','A classic novel examining racial injustice, compassion, moral courage and childhood innocence.')">Explore Book</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- NOVEL NOTES -->
+
+<section class="library-section notes" id="novel-notes">
+<div class="container">
+
+<div class="section-heading">
+<div class="section-label">Read Between the Lines</div>
+<h2>Novel Notes</h2>
+<p>
+A deeper look into the architecture of literature:
+characters, symbolism, themes and the ideas hidden
+within remarkable stories.
+</p>
+</div>
+
+<div class="note-grid">
+
+<div class="note-card">
+<span>01 · CHARACTER STUDY</span>
+<h3>The Psychology of Characters</h3>
+<p>
+Understand character motivations, emotional conflicts,
+personal transformations and the human behaviour
+that drives a story.
+</p>
+</div>
+
+<div class="note-card">
+<span>02 · LITERARY THEMES</span>
+<h3>Ideas Behind the Story</h3>
+<p>
+Explore freedom, identity, love, morality, isolation,
+power and the timeless questions that literature raises.
+</p>
+</div>
+
+<div class="note-card">
+<span>03 · SYMBOLISM</span>
+<h3>Meaning Beyond Words</h3>
+<p>
+Discover metaphors, symbols, recurring images and
+hidden meanings that give novels their intellectual depth.
+</p>
+</div>
+
+<div class="note-card">
+<span>04 · AUTHOR'S PERSPECTIVE</span>
+<h3>The Mind Behind the Novel</h3>
+<p>
+Explore an author's philosophy, worldview, historical
+influences and creative approach.
+</p>
+</div>
+
+<div class="note-card">
+<span>05 · MEMORABLE IDEAS</span>
+<h3>Thoughts Worth Keeping</h3>
+<p>
+Collect meaningful observations and reflections
+that remain relevant beyond the final page.
+</p>
+</div>
+
+<div class="note-card">
+<span>06 · CRITICAL THINKING</span>
+<h3>Question the Narrative</h3>
+<p>
+Examine different interpretations, challenge assumptions
+and develop independent literary perspectives.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- BOOK SUMMARY -->
+
+<section class="library-section summary" id="book-summary">
+<div class="container">
+
+<div class="section-heading">
+<div class="section-label">Knowledge in Every Chapter</div>
+<h2>Book Summary</h2>
+<p>
+Explore the central arguments, essential lessons and
+intellectual contributions of influential books.
+</p>
+</div>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+<span class="book-category">Personal Development</span>
+<h3>Atomic Habits</h3>
+<p>
+Small improvements, repeated consistently, can create
+remarkable long-term change. The book explores how
+systems, environment and identity influence habits.
+</p>
+<strong>Key Insight: Small actions shape big outcomes.</strong>
+</div>
+
+<div class="summary-card">
+<span class="book-category">Psychology</span>
+<h3>Thinking, Fast and Slow</h3>
+<p>
+Daniel Kahneman examines two modes of thinking:
+fast intuitive judgments and slower deliberate reasoning,
+revealing how human decisions can be biased.
+</p>
+<strong>Key Insight: Question your first judgment.</strong>
+</div>
+
+<div class="summary-card">
+<span class="book-category">Philosophy</span>
+<h3>Meditations</h3>
+<p>
+Marcus Aurelius reflects on self-discipline, virtue,
+mortality and the importance of focusing on what
+lies within our control.
+</p>
+<strong>Key Insight: Master your response to life.</strong>
+</div>
+
+<div class="summary-card">
+<span class="book-category">Social Thought</span>
+<h3>Sapiens</h3>
+<p>
+Yuval Noah Harari explores human history, shared beliefs,
+societies and the forces that shaped civilization.
+</p>
+<strong>Key Insight: Shared ideas shape human societies.</strong>
+</div>
+
+<div class="summary-card">
+<span class="book-category">Literature</span>
+<h3>The Little Prince</h3>
+<p>
+A poetic exploration of childhood, relationships,
+love and the importance of seeing beyond appearances.
+</p>
+<strong>Key Insight: What matters is not always visible.</strong>
+</div>
+
+<div class="summary-card">
+<span class="book-category">Existential Thought</span>
+<h3>Man's Search for Meaning</h3>
+<p>
+Viktor Frankl reflects on suffering, responsibility
+and the human search for meaning even in difficult
+circumstances.
+</p>
+<strong>Key Insight: Meaning can sustain the human spirit.</strong>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- READING COLLECTION -->
+
+<section class="library-section collection" id="reading-collection">
+<div class="container">
+
+<div class="section-heading">
+<div class="section-label">Your Literary Archive</div>
+<h2>Reading Collection</h2>
+<p>
+A curated collection of books across different disciplines,
+from timeless literature to modern intellectual thought.
+</p>
+</div>
+
+<div class="collection-tools">
+
+<input type="text" id="searchBook"
+placeholder="Search books, authors or categories..."
+oninput="filterBooks()">
+
+<button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+<button class="filter-btn" onclick="setFilter('Fiction',this)">Fiction</button>
+<button class="filter-btn" onclick="setFilter('Psychology',this)">Psychology</button>
+<button class="filter-btn" onclick="setFilter('Philosophy',this)">Philosophy</button>
+<button class="filter-btn" onclick="setFilter('History',this)">History</button>
+
+</div>
+
+<div class="book-grid" id="collectionGrid">
+
+<div class="book-card" data-category="Fiction">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/Pride%20and%20Prejudice-M.jpg" alt="Pride and Prejudice">
+<div class="book-info">
+<span class="book-category">Fiction</span>
+<h3>Pride and Prejudice</h3>
+<p>Jane Austen · Society, relationships and human nature.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('Pride and Prejudice','A classic exploration of love, social expectations, pride and personal judgment.')">Read Details</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+<div class="book-card" data-category="Psychology">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/Influence-M.jpg" alt="Influence">
+<div class="book-info">
+<span class="book-category">Psychology</span>
+<h3>Influence</h3>
+<p>Robert Cialdini · The psychology of persuasion.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('Influence','An examination of the psychological principles behind persuasion and decision-making.')">Read Details</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+<div class="book-card" data-category="Philosophy">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/Republic-M.jpg" alt="The Republic">
+<div class="book-info">
+<span class="book-category">Philosophy</span>
+<h3>The Republic</h3>
+<p>Plato · Justice, truth and the ideal society.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('The Republic','Plato explores justice, political philosophy, education and the nature of an ideal society.')">Read Details</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+<div class="book-card" data-category="History">
+<img class="book-cover" src="https://covers.openlibrary.org/b/title/The%20Story%20of%20Civilization-M.jpg" alt="The Story of Civilization">
+<div class="book-info">
+<span class="book-category">History</span>
+<h3>The Story of Civilization</h3>
+<p>Will Durant · A broad exploration of human civilization.</p>
+<div class="book-actions">
+<button class="read-btn" onclick="showDetails('The Story of Civilization','A sweeping historical series examining civilizations, cultures, ideas and human progress.')">Read Details</button>
+<button class="fav-btn" onclick="favorite(this)">♡</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="progress-area">
+<h3>Your Reading Journey</h3>
+<p>Every page is a step towards a wider perspective.</p>
+<div class="progress-bar">
+<div class="progress-fill"></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<h2>VyomShikhar Literary World</h2>
+<p>
+Read deeply. Think freely. Explore endlessly.
+<br><br>
+© 2026 VyomShikhar. All Rights Reserved.
+</p>
+</footer>
+
+<!-- BOOK DETAILS POPUP -->
+
+<div id="bookModal" style="
+display:none;
+position:fixed;
+inset:0;
+background:#0009;
+z-index:9999;
+align-items:center;
+justify-content:center;
+padding:20px;">
+
+<div style="
+background:#fffefa;
+max-width:500px;
+width:100%;
+padding:35px;
+border-radius:12px;">
+
+<h2 id="modalTitle" style="
+font-family:'Playfair Display',serif;
+margin-bottom:15px;"></h2>
+
+<p id="modalDescription" style="
+line-height:1.8;
+color:#687269;"></p>
+
+<button class="read-btn"
+style="margin-top:25px;"
+onclick="closeModal()">Close</button>
+
+</div>
+</div>
+
+<script>
+
+// BOOK DETAILS
+
+function showDetails(title,description){
+document.getElementById("modalTitle").textContent=title;
+document.getElementById("modalDescription").textContent=description;
+document.getElementById("bookModal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("bookModal").style.display="none";
+}
+
+document.getElementById("bookModal").addEventListener("click",function(e){
+if(e.target===this){
+closeModal();
+}
+});
+
+// FAVOURITE
+
+function favorite(button){
+
+if(button.textContent==="♡"){
+button.textContent="♥";
+button.style.color="#b44b4b";
+}else{
+button.textContent="♡";
+button.style.color="#7c5940";
+}
+
+}
+
+// COLLECTION FILTER
+
+let currentFilter="all";
+
+function setFilter(category,button){
+
+currentFilter=category;
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+filterBooks();
+
+}
+
+function filterBooks(){
+
+let search=document.getElementById("searchBook").value.toLowerCase();
+
+let cards=document.querySelectorAll("#collectionGrid .book-card");
+
+cards.forEach(card=>{
+
+let category=card.dataset.category;
+let content=card.textContent.toLowerCase();
+
+let categoryMatch=
+currentFilter==="all" || category===currentFilter;
+
+let searchMatch=content.includes(search);
+
+card.style.display=
+categoryMatch && searchMatch ? "block":"none";
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

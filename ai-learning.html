@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Future Learning | VyomShikhar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --purple:#7655e8;
+    --blue:#4389ed;
+    --dark:#17182e;
+    --text:#30314b;
+    --muted:#777990;
+    --bg:#f7f7fc;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:white;
+    color:var(--text);
+}
+
+button,input{
+    font:inherit;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    radial-gradient(circle at 85% 20%,#5144a6 0,transparent 35%),
+    linear-gradient(120deg,#17182e,#25254b 60%,#36336d);
+    color:white;
+    padding:85px 7%;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero-inner{
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:45px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-label{
+    color:#c3b5ff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:3px;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.1;
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#b99cff,#65c9ff);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    color:#d1d0e6;
+    font-size:16px;
+    line-height:1.9;
+    margin:23px 0;
+    max-width:570px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:linear-gradient(90deg,#8665ef,#5299f1);
+    color:white;
+    padding:14px 25px;
+    border:none;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px #6f62d866;
+}
+
+.hero-visual{
+    min-height:340px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.ai-orbit{
+    width:270px;
+    height:270px;
+    border:1px solid #a49af866;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    animation:float 5s ease-in-out infinite;
+}
+
+.ai-orbit::before{
+    content:"";
+    position:absolute;
+    width:205px;
+    height:205px;
+    border:1px dashed #b7a9ff88;
+    border-radius:50%;
+}
+
+.ai-core{
+    width:145px;
+    height:145px;
+    border-radius:35px;
+    background:linear-gradient(135deg,#9d7bff,#428de9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:65px;
+    box-shadow:0 0 70px #8c71ff88;
+}
+
+.orbit-dot{
+    position:absolute;
+    width:40px;
+    height:40px;
+    border-radius:13px;
+    background:#34345f;
+    border:1px solid #9b92ff;
+    display:grid;
+    place-items:center;
+    font-size:20px;
+}
+
+.dot-one{top:15px;right:30px;}
+.dot-two{bottom:25px;left:15px;}
+.dot-three{top:100px;left:-18px;}
+
+@keyframes float{
+    50%{transform:translateY(-12px);}
+}
+
+/* COMMON */
+
+.container{
+    width:90%;
+    max-width:1250px;
+    margin:80px auto;
+}
+
+.section-top{
+    margin-bottom:35px;
+}
+
+.small-title{
+    color:var(--purple);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.section-top h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(27px,4vw,40px);
+    color:var(--dark);
+}
+
+.section-top p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* CATEGORY CARDS */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:23px;
+}
+
+.category-card{
+    border-radius:17px;
+    padding:30px;
+    min-height:275px;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.category-card:hover{
+    transform:translateY(-9px);
+    box-shadow:0 15px 35px #22224417;
+}
+
+.card-purple{
+    background:linear-gradient(140deg,#eee9ff,#e2d9ff);
+}
+
+.card-blue{
+    background:linear-gradient(140deg,#e5f1ff,#d6e8ff);
+}
+
+.card-pink{
+    background:linear-gradient(140deg,#ffedf5,#ffe0ed);
+}
+
+.category-icon{
+    width:60px;
+    height:60px;
+    background:#ffffffbd;
+    border-radius:16px;
+    display:grid;
+    place-items:center;
+    font-size:30px;
+    margin-bottom:23px;
+}
+
+.category-card h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:24px;
+    color:var(--dark);
+    margin-bottom:12px;
+}
+
+.category-card p{
+    font-size:14px;
+    color:#676980;
+    line-height:1.8;
+}
+
+.category-card button{
+    margin-top:20px;
+    background:none;
+    border:none;
+    color:#6245c6;
+    font-weight:800;
+    cursor:pointer;
+}
+
+/* AI TOOLS */
+
+.tools-section{
+    background:var(--bg);
+    padding:70px 0;
+}
+
+.tool-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.tool-card{
+    background:white;
+    padding:23px;
+    border:1px solid #ebebf5;
+    border-radius:13px;
+    transition:.3s;
+}
+
+.tool-card:hover{
+    transform:translateY(-6px);
+    border-color:#b9a8fa;
+    box-shadow:0 12px 25px #5551a511;
+}
+
+.tool-icon{
+    font-size:34px;
+    margin-bottom:16px;
+}
+
+.tool-card h3{
+    color:var(--dark);
+    font-size:18px;
+}
+
+.tool-card p{
+    font-size:13px;
+    color:var(--muted);
+    margin:10px 0 18px;
+    line-height:1.7;
+}
+
+.tool-card a{
+    text-decoration:none;
+    color:var(--purple);
+    font-size:13px;
+    font-weight:800;
+}
+
+/* PROMPT LAB */
+
+.prompt-section{
+    background:#191a32;
+    color:white;
+    border-radius:20px;
+    padding:45px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.prompt-section h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:35px;
+    line-height:1.3;
+}
+
+.prompt-section p{
+    color:#c4c4d9;
+    margin-top:15px;
+    line-height:1.8;
+}
+
+.prompt-box{
+    background:#292a49;
+    border:1px solid #56567b;
+    border-radius:13px;
+    padding:22px;
+}
+
+.prompt-box label{
+    font-size:13px;
+    color:#bcaeff;
+    font-weight:700;
+}
+
+.prompt-box textarea{
+    margin-top:12px;
+    width:100%;
+    min-height:120px;
+    resize:vertical;
+    background:#191a32;
+    border:1px solid #555576;
+    border-radius:8px;
+    padding:15px;
+    color:white;
+    outline:none;
+    line-height:1.7;
+}
+
+.prompt-box button{
+    background:#8669e9;
+    color:white;
+    border:0;
+    padding:11px 19px;
+    border-radius:7px;
+    margin-top:12px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+/* LEARNING PATH */
+
+.learning-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.learning-card{
+    padding:25px;
+    border:1px solid #ebebf2;
+    border-radius:12px;
+    background:white;
+}
+
+.step{
+    color:var(--purple);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.learning-card h3{
+    font-family:'Space Grotesk',sans-serif;
+    margin:15px 0 10px;
+}
+
+.learning-card p{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* QUOTE */
+
+.future-quote{
+    background:linear-gradient(120deg,#ece8ff,#e4f0ff);
+    padding:55px 25px;
+    text-align:center;
+    border-radius:17px;
+}
+
+.future-quote h2{
+    font-family:'Space Grotesk',sans-serif;
+    max-width:800px;
+    margin:auto;
+    font-size:clamp(24px,4vw,36px);
+    color:#252449;
+}
+
+.future-quote p{
+    margin-top:15px;
+    color:#7563bb;
+}
+
+/* FOOTER */
+
+footer{
+    background:#191a32;
+    text-align:center;
+    color:#c7c7d9;
+    padding:30px 15px;
+    font-size:13px;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:999;
+    background:#101020bd;
+    padding:20px;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-content{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    max-width:550px;
+    width:100%;
+    position:relative;
+}
+
+.modal-content h2{
+    font-family:'Space Grotesk',sans-serif;
+    margin-bottom:15px;
+}
+
+.modal-content p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.close{
+    float:right;
+    border:0;
+    background:#eeeafa;
+    color:#6245c6;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+    .hero-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero-visual{
+        min-height:290px;
+    }
+
+    .tool-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .learning-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+    .hero{
+        padding:60px 6%;
+    }
+
+    .container{
+        width:92%;
+        margin:55px auto;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tool-grid{
+        grid-template-columns:1fr;
+    }
+
+    .learning-grid{
+        grid-template-columns:1fr;
+    }
+
+    .prompt-section{
+        grid-template-columns:1fr;
+        padding:25px;
+    }
+
+    .prompt-section h2{
+        font-size:28px;
+    }
+
+    .ai-orbit{
+        transform:scale(.85);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-inner">
+
+<div>
+
+<div class="hero-label">
+VYOMSHIKHAR • THE NEXT GENERATION
+</div>
+
+<h1>
+Explore AI.<br>
+Learn Beyond<br>
+<span>Tomorrow.</span>
+</h1>
+
+<p>
+Discover the power of Artificial Intelligence,
+explore modern learning technologies and develop
+the skills that will shape the future.
+</p>
+
+<a href="#explore" class="hero-btn">
+Start Exploring →
+</a>
+
+</div>
+
+<div class="hero-visual">
+
+<div class="ai-orbit">
+
+<div class="ai-core">✧</div>
+
+<div class="orbit-dot dot-one">🤖</div>
+<div class="orbit-dot dot-two">💡</div>
+<div class="orbit-dot dot-three">⚡</div>
+
+</div>
+
+</div>
+
+</div>
+</header>
+
+
+<!-- EXPLORE -->
+
+<section class="container" id="explore">
+
+<div class="section-top">
+<div class="small-title">EXPLORE THE FUTURE</div>
+<h2>Three Worlds of Future Learning</h2>
+<p>Choose your interest and start discovering new possibilities.</p>
+</div>
+
+<div class="category-grid">
+
+<div class="category-card card-purple">
+<div class="category-icon">🤖</div>
+<h3>AI Tools</h3>
+<p>
+Explore powerful AI platforms for writing,
+research, image creation, coding and productivity.
+</p>
+<button onclick="showInfo('AI Tools')">
+Explore AI Tools →
+</button>
+</div>
+
+<div class="category-card card-blue">
+<div class="category-icon">🎓</div>
+<h3>Smart Education</h3>
+<p>
+Discover intelligent classrooms, digital learning,
+AI tutors and the future of education.
+</p>
+<button onclick="showInfo('Smart Education')">
+Explore Education →
+</button>
+</div>
+
+<div class="category-card card-pink">
+<div class="category-icon">🧠</div>
+<h3>Prompt Engineering</h3>
+<p>
+Learn to communicate with AI through
+better prompts, instructions and creative thinking.
+</p>
+<button onclick="showInfo('Prompt Engineering')">
+Learn Prompting →
+</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- TOOLS -->
+
+<section class="tools-section">
+
+<div class="container">
+
+<div class="section-top">
+<div class="small-title">DISCOVER THE TOOLKIT</div>
+<h2>Explore AI Tools</h2>
+<p>Some popular platforms to explore artificial intelligence.</p>
+</div>
+
+<div class="tool-grid">
+
+<div class="tool-card">
+<div class="tool-icon">💬</div>
+<h3>ChatGPT</h3>
+<p>AI assistant for writing, learning, research and problem solving.</p>
+<a href="https://chatgpt.com/" target="_blank" rel="noopener">Explore Tool ↗</a>
+</div>
+
+<div class="tool-card">
+<div class="tool-icon">🔍</div>
+<h3>Google Gemini</h3>
+<p>Explore Google's AI assistant for information and creative tasks.</p>
+<a href="https://gemini.google.com/" target="_blank" rel="noopener">Explore Tool ↗</a>
+</div>
+
+<div class="tool-card">
+<div class="tool-icon">🎨</div>
+<h3>Canva AI</h3>
+<p>Discover AI-assisted graphic design and creative content tools.</p>
+<a href="https://www.canva.com/" target="_blank" rel="noopener">Explore Tool ↗</a>
+</div>
+
+<div class="tool-card">
+<div class="tool-icon">💻</div>
+<h3>GitHub Copilot</h3>
+<p>Explore AI-assisted coding and developer productivity.</p>
+<a href="https://github.com/features/copilot" target="_blank" rel="noopener">Explore Tool ↗</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PROMPT ENGINEERING -->
+
+<section class="container">
+
+<div class="prompt-section">
+
+<div>
+
+<div class="small-title" style="color:#bcaeff">
+INTERACTIVE PROMPT LAB
+</div>
+
+<h2>Learn the Art of Talking to AI.</h2>
+
+<p>
+A good prompt can turn a simple question into
+a powerful result. Experiment with instructions
+and understand how to communicate with AI.
+</p>
+
+</div>
+
+<div class="prompt-box">
+
+<label>WRITE YOUR PROMPT</label>
+
+<textarea id="promptInput"
+placeholder="Example: Explain artificial intelligence in simple Hindi with examples..."></textarea>
+
+<button onclick="copyPrompt()">
+Copy My Prompt ↗
+</button>
+
+<p id="copyMessage"
+style="font-size:12px;color:#bcaeff;margin-top:12px"
+aria-live="polite"></p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- LEARNING ROADMAP -->
+
+<section class="container">
+
+<div class="section-top">
+<div class="small-title">YOUR LEARNING JOURNEY</div>
+<h2>Start Learning AI Step by Step</h2>
+<p>Build your understanding from beginner to practical application.</p>
+</div>
+
+<div class="learning-grid">
+
+<div class="learning-card">
+<div class="step">STEP 01</div>
+<h3>AI Fundamentals</h3>
+<p>Understand AI, machine learning, neural networks and basic concepts.</p>
+</div>
+
+<div class="learning-card">
+<div class="step">STEP 02</div>
+<h3>Explore AI Tools</h3>
+<p>Experiment with writing, research, design and coding assistants.</p>
+</div>
+
+<div class="learning-card">
+<div class="step">STEP 03</div>
+<h3>Master Prompts</h3>
+<p>Learn instructions, context, examples and effective prompt structures.</p>
+</div>
+
+<div class="learning-card">
+<div class="step">STEP 04</div>
+<h3>Build Projects</h3>
+<p>Apply your knowledge through websites, research and creative projects.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="container">
+
+<div class="future-quote">
+
+<h2>
+"The future belongs to those who keep learning,
+questioning and creating."
+</h2>
+
+<p>VYOMSHIKHAR • FUTURE LEARNING</p>
+
+</div>
+
+</section>
+
+
+<footer>
+<p>© 2026 VyomShikhar | AI & Future Learning</p>
+<p>Explore Technology • Develop Ideas • Shape Tomorrow</p>
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="infoModal">
+
+<div class="modal-content">
+
+<button class="close" onclick="closeInfo()">×</button>
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalDescription"></p>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* CATEGORY INFORMATION */
+
+const info = {
+
+"AI Tools":
+"AI tools help people write, research, create images, analyse information and develop software. Explore different platforms and learn their capabilities and limitations.",
+
+"Smart Education":
+"Smart education combines digital platforms, intelligent learning systems, educational technology and personalized learning experiences to make education more accessible and effective.",
+
+"Prompt Engineering":
+"Prompt engineering is the practice of designing clear instructions and useful context for AI systems. Learn how to specify roles, tasks, examples, formats and constraints."
+
+};
+
+
+/* OPEN MODAL */
+
+function showInfo(category){
+
+document.getElementById("modalTitle").textContent=category;
+
+document.getElementById("modalDescription").textContent=info[category];
+
+document.getElementById("infoModal").classList.add("active");
+
+document.body.style.overflow="hidden";
+
+}
+
+
+/* CLOSE MODAL */
+
+function closeInfo(){
+
+document.getElementById("infoModal").classList.remove("active");
+
+document.body.style.overflow="";
+
+}
+
+
+/* COPY PROMPT */
+
+function copyPrompt(){
+
+const prompt=document.getElementById("promptInput").value;
+
+const message=document.getElementById("copyMessage");
+
+if(!prompt.trim()){
+
+message.textContent="Please write a prompt first.";
+
+return;
+
+}
+
+if(navigator.clipboard && window.isSecureContext){
+
+navigator.clipboard.writeText(prompt).then(()=>{
+
+message.textContent="Prompt copied successfully!";
+
+}).catch(()=>{
+
+message.textContent="Unable to copy. Please copy manually.";
+
+});
+
+}else{
+
+message.textContent="Please copy your prompt manually.";
+
+}
+
+}
+
+
+/* CLOSE ON OUTSIDE CLICK */
+
+document.getElementById("infoModal").addEventListener("click",function(e){
+
+if(e.target===this){
+
+closeInfo();
+
+}
+
+});
+
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+closeInfo();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

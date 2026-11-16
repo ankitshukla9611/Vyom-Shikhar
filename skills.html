@@ -1,0 +1,1969 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhance Skills | VyomShikhar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f6f8f1;
+    color:#254635;
+    overflow-x:hidden;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* ================= MAIN SECTION ================= */
+
+.skills-section{
+    width:100%;
+    padding:85px 6%;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.skills-section::before{
+    content:"";
+    position:absolute;
+    width:480px;
+    height:480px;
+    top:-180px;
+    left:-170px;
+    background:radial-gradient(circle,#c4e5cc,transparent 70%);
+    filter:blur(25px);
+    z-index:-1;
+    animation:float 9s ease-in-out infinite alternate;
+}
+
+.skills-section::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    bottom:-180px;
+    right:-150px;
+    background:radial-gradient(circle,#f2dfb5,transparent 70%);
+    filter:blur(30px);
+    z-index:-1;
+    animation:float 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float{
+    to{transform:translate(35px,30px);}
+}
+
+/* ================= HERO ================= */
+
+.skills-hero{
+    max-width:850px;
+    margin:0 auto 55px;
+    text-align:center;
+    animation:fadeUp .8s ease;
+}
+
+.hero-tag{
+    display:inline-block;
+    padding:10px 22px;
+    background:#e2f0e4;
+    border-radius:30px;
+    color:#26754b;
+    font-size:11px;
+    letter-spacing:2px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.skills-hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(38px,5vw,65px);
+    line-height:1.2;
+    color:#194631;
+    margin-bottom:20px;
+}
+
+.skills-hero h1 span{
+    background:linear-gradient(100deg,#268052,#b18a43);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.skills-hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:14px;
+    color:#718077;
+    line-height:2;
+}
+
+.hero-bottom{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-top:30px;
+}
+
+.hero-stat{
+    text-align:center;
+}
+
+.hero-stat strong{
+    display:block;
+    font-size:22px;
+    color:#28754b;
+}
+
+.hero-stat span{
+    font-size:10px;
+    color:#849087;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* ================= FILTER ================= */
+
+.filter-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:40px;
+}
+
+.filter-btn{
+    border:1px solid #dce8dc;
+    background:rgba(255,255,255,.8);
+    color:#45634e;
+    padding:12px 23px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:linear-gradient(120deg,#26794e,#174a36);
+    color:white;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px #276f4930;
+}
+
+/* ================= CATEGORY HEADER ================= */
+
+.category-intro{
+    max-width:1250px;
+    margin:0 auto 25px;
+    padding:26px 30px;
+    background:rgba(255,255,255,.75);
+    border:1px solid #e4ebe1;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.category-intro h2{
+    font-family:'Playfair Display',serif;
+    font-size:30px;
+    margin:8px 0;
+    color:#1c4d36;
+}
+
+.category-intro p{
+    font-size:12px;
+    line-height:1.9;
+    color:#78867b;
+    max-width:750px;
+}
+
+.category-intro .small-tag{
+    font-size:10px;
+    letter-spacing:2px;
+    font-weight:700;
+    color:#368054;
+}
+
+/* ================= GRID ================= */
+
+.modules-grid{
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+}
+
+/* ================= MODULE CARD ================= */
+
+.module-card{
+    background:rgba(255,255,255,.9);
+    border:1px solid #e5ece3;
+    border-radius:22px;
+    padding:27px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(30,70,45,.06);
+    transition:.4s;
+    animation:fadeUp .6s ease both;
+    --accent:#28784c;
+    --soft:#eaf4e9;
+    --glow:#c9e7cf;
+}
+
+.module-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 40px rgba(30,70,45,.12);
+}
+
+.module-card::before{
+    content:"";
+    position:absolute;
+    width:190px;
+    height:190px;
+    top:-105px;
+    right:-95px;
+    background:radial-gradient(circle,var(--glow),transparent 70%);
+    opacity:.75;
+    z-index:0;
+    transition:.5s;
+    pointer-events:none;
+}
+
+.module-card:hover::before{
+    transform:scale(1.5);
+}
+
+.module-card>*{
+    position:relative;
+    z-index:1;
+}
+
+.module-card.english{
+    --accent:#5968ae;
+    --soft:#edf0ff;
+    --glow:#d4dafa;
+}
+
+.module-card.personality{
+    --accent:#a98139;
+    --soft:#f8f0df;
+    --glow:#f0dfb6;
+}
+
+.module-card.communication{
+    --accent:#28784c;
+    --soft:#eaf4e9;
+    --glow:#c9e7cf;
+}
+
+.module-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.module-number{
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:var(--accent);
+    font-weight:700;
+}
+
+.module-icon{
+    width:55px;
+    height:55px;
+    background:var(--soft);
+    display:grid;
+    place-items:center;
+    border-radius:16px;
+    font-size:26px;
+    margin:22px 0;
+    transition:.4s;
+    mix-blend-mode:multiply;
+}
+
+.module-card:hover .module-icon{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+.module-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:25px;
+    color:#244a36;
+    margin-bottom:9px;
+}
+
+.module-subtitle{
+    color:var(--accent);
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.module-description{
+    color:#77847a;
+    font-size:12px;
+    line-height:1.95;
+}
+
+.module-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:20px 0;
+}
+
+.module-tags span{
+    background:var(--soft);
+    color:var(--accent);
+    padding:7px 11px;
+    font-size:10px;
+    border-radius:30px;
+}
+
+.module-divider{
+    height:1px;
+    background:#e8eee7;
+    margin:20px 0;
+}
+
+/* ================= LESSON ================= */
+
+.lesson{
+    border-bottom:1px solid #edf0eb;
+    padding:14px 0;
+}
+
+.lesson summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    color:#385443;
+    font-size:12px;
+    font-weight:600;
+    line-height:1.7;
+}
+
+.lesson summary::-webkit-details-marker{
+    display:none;
+}
+
+.lesson summary::after{
+    content:"+";
+    font-size:22px;
+    color:var(--accent);
+    flex-shrink:0;
+    transition:.3s;
+}
+
+.lesson[open] summary::after{
+    content:"−";
+}
+
+.lesson-content{
+    padding:18px 0 8px;
+    animation:fadeUp .35s ease;
+}
+
+.lesson-content p{
+    color:#758177;
+    font-size:12px;
+    line-height:2;
+    margin-bottom:13px;
+}
+
+.lesson-content h5{
+    font-size:12px;
+    color:var(--accent);
+    margin:19px 0 9px;
+}
+
+.lesson-content ul,
+.lesson-content ol{
+    padding-left:20px;
+    color:#66766b;
+    font-size:11px;
+    line-height:2.1;
+    margin-bottom:15px;
+}
+
+.lesson-content li{
+    padding-left:3px;
+}
+
+.example-box,
+.technique-box,
+.challenge-box,
+.mistake-box{
+    padding:15px;
+    border-radius:12px;
+    margin:14px 0;
+    border-left:3px solid var(--accent);
+    background:var(--soft);
+}
+
+.example-box strong,
+.technique-box strong,
+.challenge-box strong,
+.mistake-box strong{
+    font-size:11px;
+    color:var(--accent);
+}
+
+.example-box p,
+.technique-box p,
+.challenge-box p,
+.mistake-box p{
+    margin:7px 0 0;
+    color:#627366;
+    font-size:11px;
+    line-height:1.9;
+}
+
+.lesson-quote{
+    padding:15px;
+    margin:15px 0;
+    border-radius:10px;
+    background:#f6f8f3;
+    border-left:3px solid #c3a466;
+    font-family:'Playfair Display',serif;
+    font-size:15px;
+    line-height:1.7;
+    color:#48634e;
+    font-style:italic;
+}
+
+/* ================= PRACTICE ================= */
+
+.practice-section{
+    max-width:1250px;
+    margin:55px auto 0;
+    padding:35px;
+    border-radius:25px;
+    background:linear-gradient(120deg,#194c37,#327c55,#64946a);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.practice-section::after{
+    content:"✧";
+    position:absolute;
+    right:30px;
+    top:-70px;
+    font-size:230px;
+    color:#ffffff12;
+}
+
+.practice-section h2{
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.practice-section>p{
+    color:#e0eee1;
+    font-size:12px;
+    line-height:1.9;
+    max-width:700px;
+}
+
+.practice-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:28px;
+}
+
+.practice-item{
+    background:#ffffff16;
+    border:1px solid #ffffff30;
+    padding:20px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+}
+
+.practice-item span{
+    font-size:25px;
+}
+
+.practice-item h3{
+    font-size:13px;
+    margin:12px 0 8px;
+}
+
+.practice-item p{
+    color:#e3efe4;
+    font-size:11px;
+    line-height:1.8;
+}
+
+/* ================= DAILY JOURNEY ================= */
+
+.journey-section{
+    max-width:1250px;
+    margin:55px auto 0;
+    padding:30px;
+    border-radius:23px;
+    background:rgba(255,255,255,.8);
+    border:1px solid #e5ebe3;
+}
+
+.journey-section h2{
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    color:#244d36;
+    margin-bottom:12px;
+}
+
+.journey-section>p{
+    color:#7a877d;
+    font-size:12px;
+    line-height:1.9;
+}
+
+.journey-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.journey-item{
+    padding:20px;
+    background:#f3f7ef;
+    border-radius:15px;
+    border:1px solid #e4ede1;
+}
+
+.journey-item strong{
+    display:block;
+    color:#28784c;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.journey-item span{
+    color:#718077;
+    font-size:11px;
+    line-height:1.8;
+}
+
+/* ================= FOOTER MESSAGE ================= */
+
+.growth-banner{
+    max-width:1250px;
+    margin:55px auto 0;
+    text-align:center;
+    padding:50px 25px;
+    border-radius:25px;
+    background:linear-gradient(120deg,#f1f6e9,#e5f0e5,#f9f0dc);
+    border:1px solid #e2e9d9;
+}
+
+.growth-banner h2{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(27px,4vw,40px);
+    color:#214c35;
+    margin-bottom:15px;
+}
+
+.growth-banner p{
+    color:#728077;
+    font-size:12px;
+    line-height:2;
+    max-width:650px;
+    margin:auto;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:950px){
+
+    .modules-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .journey-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    .skills-section{
+        padding:55px 5%;
+    }
+
+    .skills-hero{
+        margin-bottom:35px;
+    }
+
+    .skills-hero p{
+        font-size:12px;
+    }
+
+    .hero-bottom{
+        gap:18px;
+    }
+
+    .category-intro{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:22px;
+    }
+
+    .category-intro h2{
+        font-size:26px;
+    }
+
+    .modules-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .module-card{
+        padding:22px;
+    }
+
+    .practice-section{
+        padding:27px 22px;
+    }
+
+    .practice-section h2{
+        font-size:27px;
+    }
+
+    .practice-grid{
+        grid-template-columns:1fr;
+    }
+
+    .journey-section{
+        padding:24px 20px;
+    }
+
+    .journey-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .growth-banner{
+        padding:35px 20px;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .skills-hero h1{
+        font-size:34px;
+    }
+
+    .filter-btn{
+        padding:10px 13px;
+        font-size:10px;
+    }
+
+    .journey-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="skills-section">
+
+<!-- ================= HERO ================= -->
+
+<header class="skills-hero">
+
+    <span class="hero-tag">THE JOURNEY OF SELF DEVELOPMENT</span>
+
+    <h1>
+        Enhance Your <span>Skills.</span><br>
+        Elevate Your Life.
+    </h1>
+
+    <p>
+        Knowledge gives you direction, practice gives you ability
+        and consistency turns ability into excellence.
+        Explore essential life skills, strengthen your personality
+        and develop the confidence to move forward.
+    </p>
+
+    <div class="hero-bottom">
+
+        <div class="hero-stat">
+            <strong>03</strong>
+            <span>Learning Paths</span>
+        </div>
+
+        <div class="hero-stat">
+            <strong>18</strong>
+            <span>Core Modules</span>
+        </div>
+
+        <div class="hero-stat">
+            <strong>∞</strong>
+            <span>Growth Opportunities</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= FILTER ================= -->
+
+<div class="filter-container">
+
+    <button class="filter-btn active" data-filter="all">
+        All Learning
+    </button>
+
+    <button class="filter-btn" data-filter="communication">
+        Communication Skills
+    </button>
+
+    <button class="filter-btn" data-filter="english">
+        English Practice
+    </button>
+
+    <button class="filter-btn" data-filter="personality">
+        Personality Growth
+    </button>
+
+</div>
+
+
+<!-- ================= COMMUNICATION ================= -->
+
+<section class="category-block" data-category-block="communication">
+
+    <div class="category-intro">
+
+        <div>
+            <span class="small-tag">01 / EXPRESS YOURSELF</span>
+
+            <h2>Communication Skills</h2>
+
+            <p>
+                Communication is the foundation of meaningful relationships,
+                effective teamwork and professional success. Learn to
+                express your thoughts clearly, listen actively and
+                communicate with confidence in different situations.
+            </p>
+        </div>
+
+        <span style="font-size:45px;">💬</span>
+
+    </div>
+
+    <div class="modules-grid" id="communication-grid"></div>
+
+</section>
+
+
+<!-- ================= ENGLISH ================= -->
+
+<section class="category-block" data-category-block="english">
+
+    <div class="category-intro">
+
+        <div>
+            <span class="small-tag">02 / LEARN & COMMUNICATE</span>
+
+            <h2>English Practice</h2>
+
+            <p>
+                Language is a bridge between ideas and people.
+                Develop practical English skills through grammar,
+                vocabulary, speaking, listening, reading and writing.
+                Build fluency through regular practice, not memorization alone.
+            </p>
+        </div>
+
+        <span style="font-size:45px;">📚</span>
+
+    </div>
+
+    <div class="modules-grid" id="english-grid"></div>
+
+</section>
+
+
+<!-- ================= PERSONALITY ================= -->
+
+<section class="category-block" data-category-block="personality">
+
+    <div class="category-intro">
+
+        <div>
+            <span class="small-tag">03 / DISCOVER YOUR POTENTIAL</span>
+
+            <h2>Personality Growth</h2>
+
+            <p>
+                Personal development is a continuous process of
+                understanding yourself, strengthening your habits,
+                improving your decisions and becoming more capable
+                of handling life's opportunities and challenges.
+            </p>
+        </div>
+
+        <span style="font-size:45px;">🌱</span>
+
+    </div>
+
+    <div class="modules-grid" id="personality-grid"></div>
+
+</section>
+
+
+<!-- ================= PRACTICE ================= -->
+
+<section class="practice-section">
+
+    <h2>Turn Knowledge Into Action.</h2>
+
+    <p>
+        Reading about a skill is the beginning. Practising it
+        consistently is what helps you develop it. Make learning
+        part of your everyday life.
+    </p>
+
+    <div class="practice-grid">
+
+        <div class="practice-item">
+            <span>🎯</span>
+            <h3>Set a Clear Goal</h3>
+            <p>
+                Choose one ability you genuinely want to improve
+                and define what progress looks like.
+            </p>
+        </div>
+
+        <div class="practice-item">
+            <span>📖</span>
+            <h3>Learn Something Daily</h3>
+            <p>
+                Spend a little time understanding a new concept
+                and connect it with practical situations.
+            </p>
+        </div>
+
+        <div class="practice-item">
+            <span>🚀</span>
+            <h3>Practice Consistently</h3>
+            <p>
+                Apply what you learn through conversations,
+                exercises, writing and real-life experiences.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DAILY ROUTINE ================= -->
+
+<section class="journey-section">
+
+    <h2>A Simple Daily Growth Routine</h2>
+
+    <p>
+        A balanced learning routine can help you develop
+        communication, language and personal abilities together.
+    </p>
+
+    <div class="journey-grid">
+
+        <div class="journey-item">
+            <strong>15 Minutes</strong>
+            <span>
+                English reading, vocabulary and listening practice.
+            </span>
+        </div>
+
+        <div class="journey-item">
+            <strong>15 Minutes</strong>
+            <span>
+                Speaking practice, conversation and self-expression.
+            </span>
+        </div>
+
+        <div class="journey-item">
+            <strong>15 Minutes</strong>
+            <span>
+                Personality development, reflection and goal setting.
+            </span>
+        </div>
+
+        <div class="journey-item">
+            <strong>5 Minutes</strong>
+            <span>
+                Review your progress and plan your next improvement.
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL MESSAGE ================= -->
+
+<div class="growth-banner">
+
+    <h2>Become Better, One Step at a Time.</h2>
+
+    <p>
+        You do not need to become perfect to make progress.
+        Stay curious, remain consistent, learn from experience
+        and keep discovering what you are capable of achieving.
+        Your journey of growth starts with a single step.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* =====================================================
+   COMPLETE LEARNING CONTENT DATABASE
+===================================================== */
+
+const learningData = {
+
+communication: [
+
+{
+icon:"🎤",
+title:"Public Speaking & Stage Confidence",
+subtitle:"Speak with clarity. Inspire with your words.",
+description:"Public speaking is the ability to communicate ideas, information and perspectives before an audience. A successful speaker does not necessarily use complicated words. They organize thoughts, communicate naturally and make their message meaningful.",
+tags:["Speaking","Stage Confidence","Voice","Presentation"],
+lessons:[
+
+{
+title:"Understanding Public Speaking",
+intro:"Public speaking is an important communication skill used in classrooms, meetings, seminars, interviews and professional environments. It allows individuals to explain ideas, share knowledge and influence understanding through spoken communication.",
+points:[
+"Learn how to organize an introduction, main message and conclusion.",
+"Understand the purpose and expectations of your audience.",
+"Use examples and simple language to make ideas understandable.",
+"Develop confidence through preparation and repeated practice."
+],
+tech:"Choose one topic every day. Write three main points, organize them into a short speech and practise speaking for two minutes. Gradually increase the duration.",
+example:"Instead of beginning with 'Today I will talk about education', try 'Imagine a world where every child has the opportunity to learn. What could that change?'",
+challenge:"Prepare and deliver a three-minute speech on 'The Importance of Education'.",
+mistake:"Memorizing every sentence and becoming nervous when one word is forgotten. Understand your message and remember its main points instead."
+},
+
+{
+title:"Overcoming Stage Fear",
+intro:"Feeling nervous before speaking publicly is common. Stage confidence develops when you become familiar with the situation and learn to manage your physical and mental response to nervousness.",
+points:[
+"Prepare your opening sentences in advance.",
+"Rehearse your speech several times.",
+"Practise first in front of a mirror and then before a small group.",
+"Focus on communicating your message instead of judging yourself.",
+"Use slow breathing to settle yourself before beginning."
+],
+tech:"Use gradual exposure. Start by speaking alone, then record yourself, then speak to one person and eventually to a larger audience.",
+example:"A student who fears classroom presentations can begin by explaining a topic to one friend before presenting it to the entire class.",
+challenge:"Speak for two minutes in front of at least one other person.",
+mistake:"Avoiding every speaking opportunity because of nervousness. Start with manageable situations and increase the difficulty gradually."
+},
+
+{
+title:"Voice Modulation & Clear Expression",
+intro:"Your voice influences how people understand your message. Volume, pace, pauses, pronunciation and emphasis can make a speech easier to follow and more engaging.",
+points:[
+"Speak at a comfortable and audible volume.",
+"Slow down when explaining important ideas.",
+"Use pauses after important statements.",
+"Emphasize meaningful words naturally.",
+"Pronounce words clearly without rushing."
+],
+tech:"Record the same paragraph twice. In the second recording, deliberately improve your pace, pauses and clarity. Compare both versions.",
+example:"Compare 'Communication is important' with 'Communication... is the foundation of meaningful relationships.' A natural pause can emphasize the message.",
+challenge:"Read one paragraph aloud and record it for one minute.",
+mistake:"Speaking too quickly or shouting to appear confident. Aim for clarity, comfort and natural emphasis."
+},
+
+{
+title:"Audience Engagement & Storytelling",
+intro:"People connect with information more easily when it is relevant, relatable and supported by examples. Storytelling makes abstract ideas easier to understand.",
+points:[
+"Begin with a question, observation or short story.",
+"Use examples that relate to your audience.",
+"Ask thoughtful questions.",
+"Connect information with real-life experiences.",
+"Keep your message focused."
+],
+tech:"Use the Story-Point-Lesson approach. Tell a short story, explain the main point and show what the audience can learn from it.",
+example:"When discussing discipline, share a short story about how a student developed a daily study routine instead of only listing rules.",
+challenge:"Explain a lesson you learned from personal experience in two minutes.",
+mistake:"Adding unrelated stories or too many jokes. Every example should support the central message."
+}
+
+]
+},
+
+{
+icon:"🤝",
+title:"Conversation & Active Listening",
+subtitle:"Understand others before expecting to be understood.",
+description:"Effective conversation involves both speaking and listening. Good communicators pay attention, ask meaningful questions, understand different viewpoints and respond thoughtfully rather than simply waiting for their turn to speak.",
+tags:["Listening","Conversation","Empathy","Relationships"],
+lessons:[
+
+{
+title:"Active Listening",
+intro:"Active listening means giving full attention to a speaker and making an effort to understand their message, emotions and perspective. It improves relationships and reduces misunderstandings.",
+points:[
+"Give the speaker your attention.",
+"Avoid unnecessary interruptions.",
+"Ask relevant follow-up questions.",
+"Notice the main idea and supporting details.",
+"Summarize important points when appropriate."
+],
+tech:"Use the Listen-Understand-Respond method. First listen without interrupting, then identify the central message and finally give a relevant response.",
+example:"If someone says they are worried about an examination, instead of immediately giving advice, ask which part is troubling them most.",
+challenge:"Have a five-minute conversation in which your main goal is to understand the other person's point of view.",
+mistake:"Thinking about your response while the other person is still speaking. Concentrate on their message first."
+},
+
+{
+title:"Starting and Maintaining Conversations",
+intro:"Conversation skills help people build connections in social, academic and professional environments. A good conversation begins with a relevant opening and develops through mutual interest.",
+points:[
+"Start with a friendly greeting.",
+"Ask open-ended questions.",
+"Find a shared topic of interest.",
+"Share relevant experiences without dominating.",
+"Recognize when a conversation should naturally end."
+],
+tech:"Use the QUESTION technique: ask about a topic, listen to the answer, share a related thought and ask a meaningful follow-up question.",
+example:"Instead of asking only 'Do you like reading?', ask 'What kind of books have you enjoyed recently and why?'",
+challenge:"Start a meaningful conversation with a classmate or colleague about a shared interest.",
+mistake:"Asking too many questions like an interview or talking only about yourself. Maintain a natural balance."
+},
+
+{
+title:"Empathy & Understanding Different Perspectives",
+intro:"Empathy is the ability to understand another person's feelings or perspective. It helps build trust and makes communication more respectful and constructive.",
+points:[
+"Try to understand the situation from another person's perspective.",
+"Respect differences in opinion.",
+"Listen without making immediate judgments.",
+"Use thoughtful and considerate language.",
+"Recognize that people may experience the same situation differently."
+],
+tech:"Before disagreeing, explain what you understood about the other person's viewpoint. Then share your own perspective respectfully.",
+example:"You can say 'I understand why you see it that way. My experience has been a little different.'",
+challenge:"During one discussion, identify one viewpoint that differs from yours and try to understand its reasoning.",
+mistake:"Assuming that empathy means agreeing with everyone. You can understand someone without sharing their opinion."
+},
+
+{
+title:"Conflict Resolution & Constructive Feedback",
+intro:"Disagreements are natural in relationships and workplaces. Constructive communication helps people discuss problems without turning differences into personal attacks.",
+points:[
+"Focus on the issue rather than attacking the person.",
+"Describe the situation clearly.",
+"Listen to the other person's explanation.",
+"Suggest practical solutions.",
+"Give feedback respectfully and specifically."
+],
+tech:"Use the Situation-Behavior-Impact approach. Explain the situation, describe the observed behavior and discuss its impact without making personal judgments.",
+example:"Instead of saying 'You are careless', say 'The report was submitted after the deadline, which affected our schedule. How can we avoid this next time?'",
+challenge:"Practise expressing disagreement respectfully using one specific example.",
+mistake:"Using insulting language, assumptions or generalizations. Discuss observable actions and possible solutions."
+}
+
+]
+},
+
+{
+icon:"🧍",
+title:"Body Language & Personal Presence",
+subtitle:"Let your actions support your words.",
+description:"Nonverbal communication includes posture, facial expressions, gestures, eye contact and physical presence. These signals influence how people interpret your message, although they should never be treated as perfect indicators of someone's thoughts.",
+tags:["Posture","Eye Contact","Gestures","Presence"],
+lessons:[
+
+{
+title:"Confident Posture & Gestures",
+intro:"Posture and gestures contribute to how naturally and comfortably you communicate. Relaxed shoulders, balanced posture and purposeful gestures can help your message feel more composed.",
+points:[
+"Stand or sit comfortably with a balanced posture.",
+"Keep your shoulders relaxed.",
+"Use natural hand movements to explain ideas.",
+"Avoid repetitive movements that distract from your message.",
+"Maintain a comfortable distance from others."
+],
+tech:"Record a short introduction and observe whether your movements support your words. Practise a relaxed posture rather than forcing a rigid pose.",
+example:"When explaining three ideas, use a natural counting gesture to help the audience follow the structure.",
+challenge:"Give a one-minute introduction while maintaining relaxed posture and purposeful gestures.",
+mistake:"Exaggerating hand movements or copying another person's body language. Develop a natural style."
+},
+
+{
+title:"Eye Contact & Facial Expressions",
+intro:"Appropriate eye contact and facial expressions help create a sense of attention and connection during conversations.",
+points:[
+"Maintain comfortable eye contact.",
+"Look away naturally when appropriate.",
+"Use facial expressions that match your message.",
+"Show interest through attentive expressions.",
+"Respect cultural and individual differences."
+],
+tech:"While speaking to a small group, naturally distribute your attention among different listeners instead of looking at only one person.",
+example:"A warm expression and attentive look during a greeting can make an interaction feel more welcoming.",
+challenge:"Practise a short conversation while maintaining comfortable eye contact.",
+mistake:"Staring continuously or assuming that limited eye contact always indicates dishonesty or lack of confidence."
+}
+]
+},
+
+{
+icon:"📊",
+title:"Presentation & Interview Skills",
+subtitle:"Organize your ideas. Present your abilities.",
+description:"Presentations and interviews require preparation, clear thinking and the ability to explain information in a structured way. These skills are useful in education, employment and professional development.",
+tags:["Interview","Presentation","Professional","Preparation"],
+lessons:[
+
+{
+title:"Creating an Effective Presentation",
+intro:"A presentation is a structured way of sharing information with an audience. A clear beginning, logical sequence and meaningful conclusion make it easier to understand.",
+points:[
+"Identify the purpose of your presentation.",
+"Understand the audience.",
+"Organize information into clear sections.",
+"Use relevant examples and simple visuals.",
+"Finish with a meaningful conclusion."
+],
+tech:"Use the Beginning-Message-Example-Conclusion structure. Introduce the subject, explain the main idea, provide examples and summarize the key message.",
+example:"For a presentation about technology, begin with a real-life problem, explain how technology helps and conclude with its opportunities and limitations.",
+challenge:"Prepare five slides on 'Technology in Modern Education' and explain them in three minutes.",
+mistake:"Putting entire paragraphs on slides. Use short points and explain the details verbally."
+},
+
+{
+title:"Interview Communication",
+intro:"An interview is an opportunity to communicate your experience, abilities, motivation and suitability for a role. Honest, relevant and structured answers are more effective than memorized statements.",
+points:[
+"Research the organization and position.",
+"Understand your own experiences and achievements.",
+"Prepare examples that demonstrate your abilities.",
+"Listen carefully to each question.",
+"Ask relevant questions when given the opportunity."
+],
+tech:"Use STAR for experience-based questions: Situation, Task, Action and Result. Explain the context, responsibility, steps taken and outcome.",
+example:"Question: Tell me about a challenge you faced. Explain the situation, what you needed to do, the action you took and what happened.",
+challenge:"Practise answering 'Tell me about yourself', 'What are your strengths?' and 'Why should we select you?'",
+mistake:"Giving exaggerated answers or pretending to have experience you do not possess. Be honest and explain your willingness to learn."
+}
+]
+},
+
+{
+icon:"👑",
+title:"Leadership & Professional Communication",
+subtitle:"Guide with responsibility. Communicate with respect.",
+description:"Leadership communication is about creating understanding, coordinating people and helping a team move towards shared goals. It combines clarity, responsibility, listening and thoughtful decision-making.",
+tags:["Leadership","Teamwork","Negotiation","Influence"],
+lessons:[
+
+{
+title:"Team Communication",
+intro:"Successful teamwork requires shared understanding, clear responsibilities and respectful discussion. Team members need to exchange information and coordinate their efforts.",
+points:[
+"Clarify common goals.",
+"Define responsibilities.",
+"Share relevant information on time.",
+"Invite different viewpoints.",
+"Recognize contributions and resolve misunderstandings."
+],
+tech:"At the beginning of a group task, agree on the objective, individual responsibilities, deadlines and communication method.",
+example:"In a college project, assign research, writing, design and presentation responsibilities to different members.",
+challenge:"Organize a small group activity and clearly communicate everyone's responsibilities.",
+mistake:"Assuming everyone understands the plan without checking. Confirm important details."
+},
+
+{
+title:"Negotiation & Persuasive Communication",
+intro:"Persuasive communication means presenting reasons, evidence and benefits to help others understand your viewpoint. Negotiation involves finding workable agreements between different interests.",
+points:[
+"Understand the interests of everyone involved.",
+"Present clear reasons and supporting evidence.",
+"Listen to objections.",
+"Look for common ground.",
+"Focus on fair and practical solutions."
+],
+tech:"Prepare your objective, understand the other side's needs and identify possible compromises before beginning a negotiation.",
+example:"When planning a team deadline, discuss workload and available time before proposing a realistic schedule.",
+challenge:"Present a reasoned argument on why students should develop a regular reading habit.",
+mistake:"Confusing persuasion with pressure. Respect the other person's right to disagree."
+}
+]
+}
+
+],
+
+
+english: [
+
+{
+icon:"🔤",
+title:"English Grammar & Sentence Formation",
+subtitle:"Build accurate sentences. Communicate clearly.",
+description:"Grammar provides structure to language. Understanding how words, phrases and sentences work together helps you communicate accurately in speaking and writing.",
+tags:["Grammar","Tenses","Sentence Structure","Writing"],
+lessons:[
+
+{
+title:"Parts of Speech",
+intro:"Parts of speech explain the different functions words perform in a sentence. Understanding them helps you recognize how language is organized.",
+points:[
+"Noun: names a person, place, thing or idea.",
+"Pronoun: replaces a noun.",
+"Verb: expresses an action or state.",
+"Adjective: describes a noun.",
+"Adverb: modifies a verb, adjective or another adverb.",
+"Preposition: shows relationships between words.",
+"Conjunction: connects words or clauses.",
+"Interjection: expresses a sudden feeling."
+],
+tech:"Take five sentences from an article and identify the nouns, verbs, adjectives and other parts of speech.",
+example:"The intelligent student quickly completed the assignment. Intelligent describes student, quickly describes completed and assignment is the object.",
+challenge:"Write ten original sentences and identify at least three different parts of speech in each.",
+mistake:"Memorizing definitions without seeing how words function in actual sentences. Learn through examples."
+},
+
+{
+title:"Tenses & Time Expressions",
+intro:"Tenses help communicate when an action happens and how it relates to time. A strong understanding of tense forms makes everyday communication clearer.",
+points:[
+"Present Simple: I study every day.",
+"Present Continuous: I am studying now.",
+"Past Simple: I studied yesterday.",
+"Past Continuous: I was studying at that time.",
+"Future Simple: I will study tomorrow.",
+"Learn perfect and perfect continuous forms through practical examples."
+],
+tech:"Choose one daily activity and describe it in the past, present and future. Then practise different forms with time expressions.",
+example:"I read books. I am reading a book. I read a book yesterday. I will read another book tomorrow.",
+challenge:"Write five sentences each about your past, present and future activities.",
+mistake:"Trying to memorize tense formulas without understanding the context and time of the action."
+},
+
+{
+title:"Articles, Prepositions & Sentence Structure",
+intro:"Articles and prepositions add important details to sentences. Sentence structure helps organize words so that the intended meaning is clear.",
+points:[
+"Understand the use of a, an and the.",
+"Learn common prepositions such as in, on, at, under and between.",
+"Understand subject, verb and object patterns.",
+"Practise positive, negative and interrogative sentences.",
+"Learn how clauses combine to form complex sentences."
+],
+tech:"Read a paragraph and underline articles and prepositions. Rewrite three sentences using a different structure without changing their meaning.",
+example:"She is in the room. The book is on the table. He arrived at the station.",
+challenge:"Write ten sentences using different prepositions and articles.",
+mistake:"Translating word by word from another language. Learn common English sentence patterns."
+}
+]
+},
+
+{
+icon:"🗣️",
+title:"Spoken English & Daily Conversation",
+subtitle:"Move from knowing English to using English.",
+description:"Spoken English develops through regular interaction, vocabulary, listening and the ability to form sentences naturally. Fluency is not the absence of mistakes; it is the ability to communicate meaningfully.",
+tags:["Fluency","Conversation","Daily English","Speaking"],
+lessons:[
+
+{
+title:"Introducing Yourself",
+intro:"Self-introduction is useful in classrooms, interviews, meetings and new social situations. A good introduction is clear, relevant and appropriate to the context.",
+points:[
+"Begin with a greeting.",
+"Share your name and relevant background.",
+"Mention your education or work when appropriate.",
+"Explain your interests and current goals.",
+"Finish naturally and confidently."
+],
+tech:"Prepare a short introduction using five points: identity, background, interests, strengths and goals. Practise adapting it to different situations.",
+example:"Hello, my name is Rahul. I am currently studying commerce. I enjoy learning about technology and business. I am working on improving my communication skills.",
+challenge:"Introduce yourself in 60 seconds without reading from a script.",
+mistake:"Sharing unnecessary personal information or memorizing a robotic introduction. Keep it natural and relevant."
+},
+
+{
+title:"Everyday Conversation Patterns",
+intro:"Daily conversation involves greetings, requests, opinions, clarification and responses. Learning useful sentence patterns makes communication easier.",
+points:[
+"How are you doing today?",
+"Could you please explain that again?",
+"In my opinion, this is a useful idea.",
+"I would like to know more about it.",
+"That sounds interesting. Can you tell me more?",
+"I understand your point, but I see it differently."
+],
+tech:"Choose one daily situation such as shopping, travelling or classroom discussion. Prepare useful expressions and practise a short dialogue.",
+example:"A: Could you help me understand this topic? B: Certainly. Which part would you like me to explain?",
+challenge:"Create a dialogue of ten exchanges about meeting a new person.",
+mistake:"Using only memorized sentences in every situation. Adapt expressions to the context."
+},
+
+{
+title:"Thinking in English",
+intro:"Thinking directly in English can reduce the effort involved in translating every sentence. It develops gradually through vocabulary, exposure and repeated language use.",
+points:[
+"Name everyday objects in English.",
+"Describe simple activities mentally.",
+"Build short sentences using familiar words.",
+"Read and listen to English regularly.",
+"Accept simple expressions instead of searching for perfect sentences."
+],
+tech:"Spend five minutes describing what you see, what you are doing and what you plan to do, using simple English sentences.",
+example:"I am sitting near the window. The weather is pleasant. I need to finish my work today.",
+challenge:"Describe your surroundings in English for three minutes.",
+mistake:"Stopping every few seconds to search for a complicated word. Use simpler language and continue."
+}
+]
+},
+
+{
+icon:"📚",
+title:"Vocabulary & Pronunciation",
+subtitle:"Choose the right words. Express ideas precisely.",
+description:"Vocabulary helps you express ideas with accuracy, while pronunciation helps listeners understand your speech. Both improve through meaningful exposure and repeated use.",
+tags:["Vocabulary","Pronunciation","Word Power","Expression"],
+lessons:[
+
+{
+title:"Building Everyday Vocabulary",
+intro:"A useful vocabulary consists of words you understand and can use appropriately. Learning a few words deeply is often more effective than memorizing long lists.",
+points:[
+"Learn the meaning of each word.",
+"Understand its part of speech.",
+"Notice how it is used in a sentence.",
+"Learn common synonyms and antonyms.",
+"Practise using the word in your own writing."
+],
+tech:"Maintain a vocabulary journal. Record five words, their meanings, example sentences and one situation where you could use each word.",
+example:"Confident: feeling assured about your abilities. Example: She felt confident before her presentation.",
+challenge:"Learn five new words daily and write a paragraph using all five.",
+mistake:"Memorizing translations without understanding context, word usage or pronunciation."
+},
+
+{
+title:"Pronunciation & Word Stress",
+intro:"Pronunciation includes individual sounds, syllables, word stress and sentence rhythm. Clear pronunciation makes communication easier without requiring you to imitate a particular accent.",
+points:[
+"Listen carefully to the pronunciation of unfamiliar words.",
+"Break longer words into syllables.",
+"Notice which syllable receives emphasis.",
+"Practise difficult sounds gradually.",
+"Use reliable dictionaries with audio pronunciation."
+],
+tech:"Listen to a short sentence, pause the audio and repeat it. Record yourself and compare clarity and rhythm.",
+example:"The word 'important' has three syllables: im-POR-tant. Notice the main stress on the second syllable.",
+challenge:"Choose ten unfamiliar words and practise their pronunciation aloud.",
+mistake:"Believing that one particular accent is the only correct form of English. Focus on clarity and intelligibility."
+}
+]
+},
+
+{
+icon:"🎧",
+title:"English Listening & Reading",
+subtitle:"Understand ideas. Develop language naturally.",
+description:"Listening and reading expose you to sentence structures, vocabulary, pronunciation and different ways of expressing ideas. Regular exposure helps strengthen comprehension.",
+tags:["Listening","Reading","Comprehension","Language"],
+lessons:[
+
+{
+title:"Listening Comprehension",
+intro:"Listening comprehension means understanding spoken information, identifying main ideas and recognizing important details. It develops through regular exposure to understandable material.",
+points:[
+"Start with short audio clips.",
+"Listen once for the main idea.",
+"Listen again for specific details.",
+"Notice unfamiliar expressions.",
+"Summarize what you understood."
+],
+tech:"Use the Listen-Repeat-Summarize method. Listen to a short clip, repeat useful phrases and explain its main idea in your own words.",
+example:"Listen to a two-minute educational audio and identify its subject, two important points and the conclusion.",
+challenge:"Listen to one English audio daily and write a five-line summary.",
+mistake:"Trying to understand every individual word before understanding the overall message."
+},
+
+{
+title:"Reading Comprehension",
+intro:"Reading develops vocabulary, comprehension and the ability to understand how ideas are connected. Reading regularly also improves writing and general knowledge.",
+points:[
+"Read articles, short stories and educational texts.",
+"Identify the main idea of each paragraph.",
+"Notice supporting arguments and examples.",
+"Use context to understand unfamiliar words.",
+"Summarize the text in your own words."
+],
+tech:"Use the Preview-Read-Question-Summarize approach. Preview the title, read carefully, ask what the author means and summarize the key points.",
+example:"After reading an article about environmental protection, explain its central argument and identify three supporting examples.",
+challenge:"Read a short article and write a 100-word summary.",
+mistake:"Reading quickly without checking whether you actually understood the message."
+}
+]
+},
+
+{
+icon:"✍️",
+title:"English Writing & Professional English",
+subtitle:"Write with clarity. Communicate professionally.",
+description:"Writing skills allow you to organize ideas and communicate information effectively. Professional English helps you interact appropriately in academic and workplace environments.",
+tags:["Writing","Email","Professional","Formal English"],
+lessons:[
+
+{
+title:"Paragraph & Essay Writing",
+intro:"Good writing communicates one central idea through a logical sequence of sentences. A clear structure makes paragraphs and essays easier to understand.",
+points:[
+"Start with a clear topic sentence.",
+"Develop the idea through supporting sentences.",
+"Use relevant facts and examples.",
+"Connect sentences logically.",
+"Conclude by reinforcing the main point."
+],
+tech:"Use the Topic-Support-Example-Conclusion structure. Draft first, organize your thoughts and revise grammar and clarity afterward.",
+example:"Topic: Reading develops knowledge. Support: It exposes us to different ideas. Example: Books introduce history, science and new perspectives. Conclusion: Regular reading supports lifelong learning.",
+challenge:"Write a 150-word paragraph on 'The Importance of Education'.",
+mistake:"Writing many unrelated sentences in one paragraph. Keep each paragraph focused on one main idea."
+},
+
+{
+title:"Professional Email Writing",
+intro:"A professional email should have a clear purpose, appropriate tone and organized information. It should help the recipient understand what is being communicated and what response is required.",
+points:[
+"Write a meaningful subject line.",
+"Use an appropriate greeting.",
+"Explain the purpose in the opening.",
+"Present details in a clear sequence.",
+"End with a polite closing and your name."
+],
+tech:"Before sending an email, check its purpose, recipient, subject, tone, grammar and any required attachments.",
+example:"Subject: Request for Meeting\n\nDear Sir/Madam,\n\nI am writing to request a meeting to discuss the project requirements. Please let me know a suitable time.\n\nThank you for your consideration.\n\nRegards,\nYour Name",
+challenge:"Write an email requesting information about an educational course.",
+mistake:"Using informal language, unclear subjects or unnecessarily long paragraphs in professional communication."
+}
+]
+}
+
+],
+
+
+personality: [
+
+{
+icon:"🪞",
+title:"Self Awareness & Self Confidence",
+subtitle:"Understand yourself. Build trust in your abilities.",
+description:"Self-awareness is the ability to recognize your thoughts, emotions, values and behavior. Confidence develops when you understand your abilities, prepare for challenges and take meaningful action.",
+tags:["Self Awareness","Confidence","Reflection","Identity"],
+lessons:[
+
+{
+title:"Discovering Your Strengths & Weaknesses",
+intro:"Self-awareness helps you understand what you do well, what challenges you and where you want to grow. It provides a realistic foundation for personal development.",
+points:[
+"Identify activities in which you perform well.",
+"Recognize skills that need improvement.",
+"Understand your interests and values.",
+"Seek honest and constructive feedback.",
+"Distinguish between a temporary difficulty and a long-term skill gap."
+],
+tech:"Create a personal development journal with three columns: strengths, improvement areas and actions. Review it every week.",
+example:"If you are good at explaining ideas but struggle with time management, use your communication strength while developing a better daily schedule.",
+challenge:"Write five strengths, three improvement areas and one practical action for each improvement area.",
+mistake:"Comparing your weaknesses with another person's strengths. Evaluate your own progress realistically."
+},
+
+{
+title:"Building Healthy Self Confidence",
+intro:"Self-confidence is the belief that you can approach situations, learn new abilities and respond to challenges. It is strengthened through preparation, experience and realistic self-evaluation.",
+points:[
+"Keep promises you make to yourself.",
+"Prepare before important tasks.",
+"Recognize small achievements.",
+"Accept mistakes as part of learning.",
+"Develop skills through consistent practice."
+],
+tech:"Use the Small Wins Method. Set one achievable task each day, complete it and record the progress you made.",
+example:"A student who fears asking questions can begin by asking one question in a small study group.",
+challenge:"Do one activity you usually avoid because of hesitation, provided it is safe and appropriate.",
+mistake:"Waiting until you feel completely confident before taking action. Confidence often develops through action."
+}
+]
+},
+
+{
+icon:"🌱",
+title:"Growth Mindset & Positive Thinking",
+subtitle:"See challenges as opportunities to learn.",
+description:"A growth mindset focuses on learning, effort, useful strategies and constructive feedback. Positive thinking does not mean ignoring difficulties; it means approaching them with realistic hope and a willingness to act.",
+tags:["Mindset","Resilience","Learning","Optimism"],
+lessons:[
+
+{
+title:"Developing a Growth Mindset",
+intro:"A growth mindset encourages the belief that many abilities can be improved through learning, practice and appropriate strategies. It changes how people respond to difficulties and feedback.",
+points:[
+"Treat challenges as opportunities to develop.",
+"Learn from mistakes rather than hiding them.",
+"Value consistent effort and effective strategies.",
+"Ask for feedback and use it constructively.",
+"Recognize progress, even when it is gradual."
+],
+tech:"Whenever you face a difficult task, write down what you do not know yet, what resources could help and what your next action should be.",
+example:"Instead of saying 'I am bad at English', say 'I need more practice with vocabulary and speaking. I can improve by practising regularly.'",
+challenge:"Identify one skill you find difficult and create a seven-day practice plan.",
+mistake:"Thinking that a growth mindset means success is guaranteed. Progress still requires appropriate methods, resources and persistence."
+},
+
+{
+title:"Constructive & Positive Thinking",
+intro:"Constructive thinking involves examining a situation, understanding the available choices and focusing on useful actions. It helps prevent temporary setbacks from becoming permanent discouragement.",
+points:[
+"Identify negative assumptions.",
+"Separate facts from interpretations.",
+"Consider alternative explanations.",
+"Focus on actions within your control.",
+"Recognize what you can learn from a setback."
+],
+tech:"Use the Pause-Identify-Reframe-Act method. Pause before reacting, identify the thought, consider a more balanced perspective and choose a practical action.",
+example:"Instead of 'I failed this test, so I cannot succeed', think 'My result shows which topics need more preparation. I will review them and practise again.'",
+challenge:"Write down one discouraging thought and rewrite it into a balanced, action-oriented statement.",
+mistake:"Ignoring genuine problems in the name of positivity. Acknowledge difficulties and work towards realistic solutions."
+}
+]
+},
+
+{
+icon:"⏳",
+title:"Time Management & Self Discipline",
+subtitle:"Manage your attention. Build consistent habits.",
+description:"Time management involves deciding how to use available time according to priorities. Self-discipline helps you follow through on important activities even when motivation changes.",
+tags:["Time Management","Discipline","Habits","Productivity"],
+lessons:[
+
+{
+title:"Planning & Prioritizing Tasks",
+intro:"Effective planning reduces confusion and helps you focus on important responsibilities. It also creates a realistic balance between work, learning and rest.",
+points:[
+"Identify your most important responsibilities.",
+"Break large tasks into smaller steps.",
+"Estimate how much time each task needs.",
+"Schedule important work during suitable hours.",
+"Review and adjust your plan."
+],
+tech:"At the beginning of the day, choose three important priorities. Give each a realistic time slot and complete the most important task first.",
+example:"Instead of writing 'Study English', write 'Read one article, learn five words and practise speaking for ten minutes.'",
+challenge:"Prepare a realistic daily timetable and review how much you completed at the end of the day.",
+mistake:"Planning every minute without leaving room for unexpected responsibilities or breaks."
+},
+
+{
+title:"Building Self Discipline & Healthy Habits",
+intro:"Self-discipline is the ability to follow meaningful commitments. Habits become easier to maintain when the action is specific, manageable and connected to a regular routine.",
+points:[
+"Start with small and achievable habits.",
+"Connect new habits to existing routines.",
+"Reduce distractions before beginning.",
+"Track consistency rather than perfection.",
+"Return to the routine after occasional interruptions."
+],
+tech:"Use the Habit Stacking method. Connect a new activity with an existing one, such as reading five minutes after breakfast.",
+example:"After finishing your morning routine, spend ten minutes practising English before checking social media.",
+challenge:"Choose one habit and follow it consistently for seven days.",
+mistake:"Trying to change too many habits simultaneously and abandoning the routine after one missed day."
+}
+]
+},
+
+{
+icon:"❤️",
+title:"Emotional Intelligence & Stress Management",
+subtitle:"Understand emotions. Respond with awareness.",
+description:"Emotional intelligence involves recognizing emotions, understanding their influence and responding thoughtfully. Stress management helps individuals handle everyday pressure through healthy and practical strategies.",
+tags:["Emotions","Self Control","Stress","Empathy"],
+lessons:[
+
+{
+title:"Understanding Emotional Intelligence",
+intro:"Emotional intelligence includes awareness of your own emotions, understanding others' perspectives and managing responses in different situations.",
+points:[
+"Recognize and name your emotions.",
+"Understand situations that trigger strong reactions.",
+"Listen to other people's feelings and perspectives.",
+"Pause before responding emotionally.",
+"Communicate feelings respectfully."
+],
+tech:"Use an Emotion Journal. Write what happened, what you felt, why you may have felt it and what response would be helpful next time.",
+example:"If criticism makes you defensive, pause and identify whether the feedback contains something useful before responding.",
+challenge:"At the end of each day, identify one strong emotion and reflect on what caused it.",
+mistake:"Confusing emotional intelligence with hiding every emotion. Understanding emotions is more useful than suppressing them."
+},
+
+{
+title:"Managing Everyday Stress",
+intro:"Stress can arise from deadlines, responsibilities, uncertainty and personal challenges. Healthy stress management involves recognizing pressure and choosing appropriate ways to respond.",
+points:[
+"Identify the main source of stress.",
+"Break overwhelming responsibilities into manageable steps.",
+"Take regular breaks.",
+"Maintain healthy sleep and physical activity.",
+"Talk to a trusted person when support is needed."
+],
+tech:"Try a simple breathing pause: breathe in comfortably, breathe out slowly and repeat for a few cycles. Then identify the next manageable action.",
+example:"When preparing for an examination, divide the syllabus into smaller sections instead of worrying about the entire syllabus at once.",
+challenge:"Create a list of three common stressors and one healthy response to each.",
+mistake:"Ignoring every source of stress or relying only on avoidance. Identify the cause and seek appropriate support when needed."
+}
+]
+},
+
+{
+icon:"🎯",
+title:"Goal Setting & Decision Making",
+subtitle:"Give your ambitions direction and purpose.",
+description:"Goal setting provides direction, while decision-making helps you choose appropriate actions. Together they support purposeful learning, career development and personal responsibility.",
+tags:["Goals","Planning","Decisions","Future"],
+lessons:[
+
+{
+title:"SMART Goal Setting",
+intro:"A useful goal is clear enough to guide action and realistic enough to work towards. SMART is a framework for making goals more specific and measurable.",
+points:[
+"Specific: Define exactly what you want to achieve.",
+"Measurable: Decide how progress will be checked.",
+"Achievable: Consider your available resources.",
+"Relevant: Connect the goal with your priorities.",
+"Time-bound: Set a reasonable deadline."
+],
+tech:"Convert a broad ambition into a weekly action plan. Review progress and adjust the plan when necessary.",
+example:"Instead of 'I want to improve English', set the goal 'I will practise speaking for 15 minutes on five days each week for one month.'",
+challenge:"Write one SMART goal for education, one for communication and one for personal development.",
+mistake:"Setting unrealistic goals without considering available time, resources or responsibilities."
+},
+
+{
+title:"Critical Thinking & Decision Making",
+intro:"Decision-making involves comparing choices and considering their possible consequences. Critical thinking helps you examine information, question assumptions and make reasoned judgments.",
+points:[
+"Define the actual problem.",
+"Gather reliable and relevant information.",
+"Identify available options.",
+"Consider benefits, risks and consequences.",
+"Choose an appropriate option and evaluate the outcome."
+],
+tech:"Use the Problem-Options-Consequences-Decision method. Write down the problem, list choices, compare likely outcomes and make a reasoned decision.",
+example:"When selecting a course, compare its curriculum, cost, learning opportunities and relevance to your future plans.",
+challenge:"Choose a real but low-risk decision and write down three possible options with their advantages and disadvantages.",
+mistake:"Making decisions based only on immediate emotions or incomplete information. Take time to evaluate important choices."
+}
+]
+},
+
+{
+icon:"👑",
+title:"Leadership, Teamwork & Social Skills",
+subtitle:"Lead responsibly. Work respectfully. Grow together.",
+description:"Leadership is not limited to a formal position. It includes taking responsibility, supporting shared goals, communicating clearly and helping others contribute effectively.",
+tags:["Leadership","Teamwork","Responsibility","Social Skills"],
+lessons:[
+
+{
+title:"Developing Leadership Qualities",
+intro:"Leadership involves guiding people towards shared objectives through responsibility, communication and thoughtful action. Effective leaders support learning and encourage participation.",
+points:[
+"Take responsibility for your commitments.",
+"Communicate goals and expectations clearly.",
+"Listen to team members.",
+"Make informed decisions.",
+"Recognize contributions and accept accountability."
+],
+tech:"Volunteer to coordinate a small group activity. Define the objective, divide responsibilities and encourage everyone to contribute.",
+example:"In a group assignment, a responsible leader helps organize tasks, checks progress and supports members who face difficulties.",
+challenge:"Lead one small group activity and reflect on what worked well and what could improve.",
+mistake:"Assuming leadership means controlling every decision. Effective leadership includes listening and sharing responsibility."
+},
+
+{
+title:"Teamwork & Relationship Building",
+intro:"Strong relationships develop through trust, respect, reliability and communication. Teamwork combines different abilities to achieve a common objective.",
+points:[
+"Respect different ideas and backgrounds.",
+"Share information openly.",
+"Support colleagues and classmates.",
+"Complete assigned responsibilities.",
+"Address disagreements constructively."
+],
+tech:"During a group task, clarify responsibilities and agree on how progress will be communicated. Appreciate useful contributions.",
+example:"In a community project, one person may organize resources, another communicate with participants and another document progress.",
+challenge:"Participate in a group activity and identify one way you helped the team succeed.",
+mistake:"Taking all the credit or blaming others when something goes wrong. Focus on shared responsibility."
+}
+]
+}
+
+]};
+
+
+/* =====================================================
+   RENDER ALL LEARNING MODULES
+===================================================== */
+
+const icons = {
+    communication:"COMMUNICATION",
+    english:"ENGLISH PRACTICE",
+    personality:"PERSONALITY GROWTH"
+};
+
+function renderModules(category){
+
+    const container = document.getElementById(category + "-grid");
+
+    if(!container) return;
+
+    container.innerHTML = "";
+
+    learningData[category].forEach((module,index)=>{
+
+        const card = document.createElement("article");
+
+        card.className = "module-card " + category;
+
+        const lessonsHTML = module.lessons.map((lesson,i)=>`
+
+            <details class="lesson">
+
+                <summary>
+                    ${String(i+1).padStart(2,"0")}. ${lesson.title}
+                </summary>
+
+                <div class="lesson-content">
+
+                    <h5>Understanding the Concept</h5>
+
+                    <p>${lesson.intro}</p>
+
+                    <h5>What You Will Learn</h5>
+
+                    <ul>
+                        ${lesson.points.map(point=>`<li>${point}</li>`).join("")}
+                    </ul>
+
+                    <div class="technique-box">
+                        <strong>IMPROVEMENT TECHNIQUE</strong>
+                        <p>${lesson.tech}</p>
+                    </div>
+
+                    <div class="example-box">
+                        <strong>REAL-LIFE EXAMPLE</strong>
+                        <p>${lesson.example}</p>
+                    </div>
+
+                    <div class="challenge-box">
+                        <strong>PRACTICAL CHALLENGE</strong>
+                        <p>${lesson.challenge}</p>
+                    </div>
+
+                    <div class="mistake-box">
+                        <strong>COMMON MISTAKE TO AVOID</strong>
+                        <p>${lesson.mistake}</p>
+                    </div>
+
+                </div>
+
+            </details>
+
+        `).join("");
+
+        card.innerHTML = `
+
+            <div class="module-top">
+
+                <span class="module-number">
+                    ${icons[category]} / ${String(index+1).padStart(2,"0")}
+                </span>
+
+                <span>✧</span>
+
+            </div>
+
+            <div class="module-icon">
+                ${module.icon}
+            </div>
+
+            <h3>${module.title}</h3>
+
+            <div class="module-subtitle">
+                ${module.subtitle}
+            </div>
+
+            <p class="module-description">
+                ${module.description}
+            </p>
+
+            <div class="module-tags">
+                ${module.tags.map(tag=>`<span>${tag}</span>`).join("")}
+            </div>
+
+            <div class="module-divider"></div>
+
+            <h4 style="font-size:13px;color:var(--accent);margin-bottom:10px;">
+                Explore Complete Lessons
+            </h4>
+
+            ${lessonsHTML}
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+Object.keys(learningData).forEach(category=>{
+
+    renderModules(category);
+
+});
+
+
+/* =====================================================
+   CATEGORY FILTER
+===================================================== */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const categoryBlocks = document.querySelectorAll("[data-category-block]");
+
+filterButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const selected = button.dataset.filter;
+
+        filterButtons.forEach(btn=>{
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        categoryBlocks.forEach(block=>{
+
+            if(selected === "all" ||
+               block.dataset.categoryBlock === selected){
+
+                block.style.display = "block";
+
+            }else{
+
+                block.style.display = "none";
+
+            }
+
+        });
+
+        window.scrollTo({
+            top:document.querySelector(".filter-container").offsetTop - 20,
+            behavior:"smooth"
+        });
+
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>

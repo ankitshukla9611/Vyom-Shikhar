@@ -1,0 +1,1128 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VyomShikhar Poems</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f3f7fc;
+    color:#222;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#0057b8;
+    color:white;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+#search{
+    width:320px;
+    padding:11px 15px;
+    border:0;
+    border-radius:8px;
+    outline:none;
+}
+
+/* BACK BUTTON */
+.back{
+    width:92%;
+    max-width:950px;
+    margin:20px auto;
+}
+
+.back a{
+    display:inline-block;
+    background:#0057b8;
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+}
+
+.back a:hover{
+    background:#e91e63;
+}
+
+/* HERO */
+.hero{
+    background:white;
+    text-align:center;
+    padding:45px 20px;
+}
+
+.hero h1{
+    color:#0057b8;
+    margin-bottom:8px;
+}
+
+/* LIBRARY */
+#library{
+    width:92%;
+    max-width:950px;
+    margin:30px auto;
+}
+
+/* WRITER CARD */
+.writer{
+    background:white;
+    padding:20px;
+    margin-bottom:25px;
+    border-radius:14px;
+    box-shadow:0 5px 18px #0001;
+}
+
+.writer-head{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.writer img{
+    width:110px;
+    height:110px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #0057b8;
+}
+
+.writer h2{
+    color:#0057b8;
+    margin-bottom:5px;
+}
+
+.writer p{
+    color:#777;
+}
+
+/* BUTTON */
+.read{
+    margin-top:10px;
+    padding:10px 20px;
+    border:0;
+    border-radius:7px;
+    background:#0057b8;
+    color:white;
+    cursor:pointer;
+}
+
+.read:hover{
+    background:#e91e63;
+}
+
+/* POEMS */
+.poems{
+    display:none;
+    margin-top:20px;
+}
+
+.poem-btn{
+    width:100%;
+    padding:13px;
+    margin:5px 0;
+    border:0;
+    border-radius:7px;
+    text-align:left;
+    background:#edf1f5;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.poem-btn:hover{
+    background:#dce7f3;
+}
+
+.poem{
+    display:none;
+    background:#fafafa;
+    border-left:4px solid #0057b8;
+    padding:20px;
+    line-height:2;
+}
+
+.poem h3{
+    color:#0057b8;
+    margin-bottom:10px;
+}
+
+/* NO RESULT */
+#noResult{
+    display:none;
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+/* FOOTER */
+footer{
+    background:#0057b8;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* MOBILE */
+@media(max-width:650px){
+
+    .navbar{
+        flex-direction:column;
+    }
+
+    #search{
+        width:100%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .writer-head{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .writer img{
+        width:100px;
+        height:100px;
+    }
+
+    .read{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        📚 VyomShikhar Poems
+    </div>
+
+    <input
+        id="search"
+        type="search"
+        placeholder="Search writer or poem..."
+    >
+
+</header>
+
+
+<!-- BACK -->
+<div class="back">
+
+    <a href="index.html">
+        ← Back to VyomShikhar
+    </a>
+
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <h1>📖 VyomShikhar Kavyashala</h1>
+
+    <p>
+        लेखक • कवि • कविता • साहित्य
+    </p>
+
+</section>
+
+
+<!-- LIBRARY -->
+<main id="library"></main>
+
+<div id="noResult">
+    🔎 कोई लेखक या कविता नहीं मिली।
+</div>
+
+
+<footer>
+
+    <h3>📚 VyamShikhar Kavyashala</h3>
+
+    <p>Read • Learn • Inspire</p>
+
+</footer>
+
+
+<script>
+
+// WRITER 
+
+const writers = [
+
+    {
+        name:"रामधारी सिंह दिनकर",
+        title:"राष्ट्रकवि",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH88lOdAREM-q_br8xC9z_ZRlrFD3ydcCQ-6HWgvMEpg&s=10",
+
+        poems:[
+            {
+                title:"रश्मिरथी",
+
+                text:`मैं हुआ धनुर्धर जब नामी,
+सब लोग हुए हित के कामी
+पर, ऐसा भी था एक समय,
+जब यह समाज निष्ठुर निर्दय,
+
+किंचित न स्नेह दर्शाता था,
+विषव्यंग सदा बरसाता था।
+
+अपना विकास अवरुद्ध देख,
+सारे समाज को क्रुद्ध देख,
+भीतर जब टूट चुका था मन,
+आ गया अचानक दुर्योथन।
+
+निश्छल, पवित्र अनुराग लिये,
+मेरा समस्त सौभाग्य लिये।
+शीतल, विरल एक कानन शोभित अधित्यका के ऊपर,
+कहीं उत्स-प्रस्त्रवण चमकते, झरते कहीं शुभ निर्झर।
+जहाँ भूमि समतल, सुन्दर है, नहीं दीखते है पाहन,
+हरियाली के बीच खड़ा है, विस्तृत एक उटज पावन।
+
+आस-पास कुछ कटे हुए पीले धनखेत सुहाते हैं,
+शशक, मूस, गिलहरी, कबूतर घूम-घूम कण खाते हैं।
+कुछ तन्द्रिल, अलसित बैठे हैं, कुछ करते शिशु का लेहन,
+कुछ खाते शाकल्य, दीखते बड़े तुष्ट सारे गोधन।
+
+हवन-अग्नि बुझ चुकी, गन्ध से वायु, अभी, पर, माती है,
+भीनी-भीनी महक प्राण में मादकता पहुँचती है,
+धूम-धूम चर्चित लगते हैं तरु के श्याम छदन कैसे?
+झपक रहे हों शिशु के अलसित कजरारे लोचन जैसे।
+
+बैठे हुए सुखद आतप में मृग रोमन्थन करते हैं,
+वन के जीव विवर से बाहर हो विश्रब्ध विचरते हैं।
+सूख रहे चीवर, रसाल की नन्हीं झुकी टहनियों पर,
+नीचे बिखरे हुए पड़े हैं इंगुद-से चिकने पत्थर।
+
+अजिन, दर्भ, पालाश, कमंडलु-एक ओर तप के साधन,
+एक ओर हैं टँगे धनुष, तूणीर, तीर, बरझे भीषण।
+चमक रहा तृण-कुटी-द्वार पर एक परशु आभाशाली,
+लौह-दण्ड पर जड़ित पड़ा हो, मानो, अर्ध अंशुमाली।
+
+श्रद्धा बढ़ती अजिन-दर्भ पर, परशु देख मन डरता है,
+युद्ध-शिविर या तपोभूमि यह, समझ नहीं कुछ पड़ता है।
+हवन-कुण्ड जिसका यह उसके ही क्या हैं ये धनुष-कुठार?
+जिस मुनि की यह स्रुवा, उसी की कैसे हो सकती तलवार?
+
+आयी है वीरता तपोवन में क्या पुण्य कमाने को?
+या संन्यास साधना में है दैहिक शक्ति जगाने को?
+मन ने तन का सिद्ध-यन्त्र अथवा शस्त्रों में पाया है?
+या कि वीर कोई योगी से युक्ति सीखने आया है?
+
+परशु और तप, ये दोनों वीरों के ही होते श्रृंगार,
+क्लीव न तो तप ही करता है, न तो उठा सकता तलवार।
+तप से मनुज दिव्य बनता है, षड् विकार से लड़ता है,
+तन की समर-भूमि में लेकिन, काम खड्ग ही करता है।
+
+किन्तु, कौन नर तपोनिष्ठ है यहाँ धनुष धरनेवाला?
+एक साथ यज्ञाग्नि और असि की पूजा करनेवाला?
+कहता है इतिहास, जगत् में हुआ एक ही नर ऐसा,
+रण में कुटिल काल-सम क्रोधी तप में महासूर्य-जैसा!
+
+मुख में वेद, पीठ पर तरकस, कर में कठिन कुठार विमल,
+शाप और शर, दोनों ही थे, जिस महान् ऋषि के सम्बल।
+यह कुटीर है उसी महामुनि परशुराम बलशाली का,
+भृगु के परम पुनीत वंशधर, व्रती, वीर, प्रणपाली का।
+
+हाँ-हाँ, वही, कर्ण की जाँघों पर अपना मस्तक धरकर,
+सोये हैं तरुवर के नीचे, आश्रम से किञ्चित् हटकर।
+पत्तों से छन-छन कर मीठी धूप माघ की आती है,
+पड़ती मुनि की थकी देह पर और थकान मिटाती है।
+
+कर्ण मुग्ध हो भक्ति-भाव में मग्न हुआ-सा जाता है,
+कभी जटा पर हाथ फेरता, पीठ कभी सहलाता है,
+चढें नहीं चीटियाँ बदन पर, पड़े नहीं तृण-पात कहीं,
+कर्ण सजग है, उचट जाय गुरुवर की कच्ची नींद नहीं।
+
+‘वृद्ध देह, तप से कृश काया, उस पर आयुध-सञ्चालन,
+हाथ, पड़ा श्रम-भार देव पर असमय यह मेरे कारण।
+किन्तु, वृद्ध होने पर भी अंगों में है क्षमता कितनी,
+और रात-दिन मुझ पर दिखलाने रहते ममता कितनी।
+
+‘कहते हैं, ‘ओ वत्स! पुष्टिकर भोग न तू यदि खायेगा,
+मेरे शिक्षण की कठोरता को कैसे सह पायेगा?
+अनुगामी यदि बना कहीं तू खान-पान में भी मेरा,
+सूख जायगा लहू, बचेगा हड्डी-भर ढाँचा तेरा।
+
+‘जरा सोच, कितनी कठोरता से मैं तुझे चलाता हूँ,
+और नहीं तो एक पाव दिन भर में रक्त जलाता हूँ।
+इसकी पूर्ति कहाँ से होगी, बना अगर तू संन्यासी,
+इस प्रकार तो चबा जायगी तुझे भूख सत्यानाशी।
+
+‘पत्थर-सी हों मांस-पेशियाँ, लोहे-से भुज-दण्ड अभय,
+नस-नस में हो लहर आग की, तभी जवानी पाती जय।
+विप्र हुआ तो क्या, रक्खेगा रोक अभी से खाने पर?
+कर लेना घनघोर तपस्या वय चतुर्थ के आने पर।
+
+‘ब्राह्मण का है धर्म त्याग, पर, क्या बालक भी त्यागी हों?
+जन्म साथ, शिलोञ्छवृत्ति के ही क्या वे अनुरागी हों?
+क्या विचित्र रचना समाज की? गिरा ज्ञान ब्राह्मण-घर में,
+मोती बरसा वैश्य-वेश्म में, पड़ा खड्ग क्षत्रिय-कर में।
+
+खड्ग बड़ा उद्धत होता है, उद्धत होते हैं राजे,
+इसीलिए तो सदा बनाते रहते वे रण के बाजे।
+और करे ज्ञानी ब्राह्मण क्या? असि-विहीन मन डरता है,
+राजा देता मान, भूप का वह भी आदर करता है।
+
+‘सुनता कौन यहाँ ब्राह्मण की, करते सब अपने मन की,
+डुबो रही शोणित में भू को भूपों की लिप्सा रण की।
+औ’ रण भी किसलिए? नहीं जग से दुख-दैन्य भगाने को,
+परशोषक, पथ-भ्रान्त मनुज को नहीं धर्म पर लाने को।
+
+‘रण केवल इसलिए कि राजे और सुखी हों, मानी हों,
+और प्रजाएँ मिलें उन्हें, वे और अधिक अभिमानी हों।
+रण केवल इसलिए कि वे कल्पित अभाव से छूट सकें,
+बढ़े राज्य की सीमा, जिससे अधिक जनों को लूट सकें।
+
+‘रण केवल इसलिए कि सत्ता बढ़े, नहीं पत्ता डोले,
+भूपों के विपरीत न कोई, कहीं, कभी, कुछ भी बोले।
+ज्यों-ज्यों मिलती विजय, अहं नरपति का बढ़ता जाता है,
+और जोर से वह समाज के सिर पर चढ़ता जाता है।
+
+‘अब तो है यह दशा कि जो कुछ है, वह राजा का बल है,
+ब्राह्मण खड़ा सामने केवल लिए शंख-गंगाजल है।
+कहाँ तेज ब्राह्मण में, अविवेकी राजा को रोक सके,
+धरे कुपथ पर जभी पाँव वह, तत्क्षण उसको टोक सके।
+
+‘और कहे भी तो ब्राह्मण की बात कौन सुन पाता है?
+यहाँ रोज राजा ब्राह्मण को अपमानित करवाता है।
+चलती नहीं यहाँ पंडित की, चलती नहीं तपस्वी की,
+जय पुकारती प्रजा रात-दिन राजा जयी यशस्वी की!
+
+‘सिर था जो सारे समाज का, वही अनादर पाता है।
+जो भी खिलता फूल, भुजा के ऊपर चढ़ता जाता है।
+चारों ओर लोभ की ज्वाला, चारों ओर भोग की जय;
+पाप-भार से दबी-धँसी जा रही धरा पल-पल निश्चय।
+
+‘जब तक भोगी भूप प्रजाओं के नेता कहलायेंगे,
+ज्ञान, त्याग, तप नहीं श्रेष्ठता का जबतक पद पायेंगे।
+अशन-वसन से हीन, दीनता में जीवन धरनेवाले।
+सहकर भी अपमान मनुजता की चिन्ता करनेवाले,
+
+‘कवि, कोविद, विज्ञान-विशारद, कलाकार, पण्डित, ज्ञानी,
+कनक नहीं, कल्पना, ज्ञान, उज्ज्वल चरित्र के अभिमानी,
+इन विभूतियों को जब तक संसार नहीं पहचानेगा,
+राजाओं से अधिक पूज्य जब तक न इन्हें वह मानेगा,
+
+‘तब तक पड़ी आग में धरती, इसी तरह अकुलायेगी,
+चाहे जो भी करे, दुखों से छूट नहीं वह पायेगी।
+थकी जीभ समझा कर, गहरी लगी ठेस अभिलाषा को,
+भूप समझता नहीं और कुछ, छोड़ खड्ग की भाषा को।
+
+‘रोक-टोक से नहीं सुनेगा, नृप समाज अविचारी है,
+ग्रीवाहर, निष्ठुर कुठार का यह मदान्ध अधिकारी है।
+इसीलिए तो मैं कहता हूँ, अरे ज्ञानियों! खड्ग धरो,
+हर न सका जिसको कोई भी, भू का वह तुम त्रास हरो।
+
+‘नित्य कहा करते हैं गुरुवर, ‘खड्ग महाभयकारी है,
+इसे उठाने का जग में हर एक नहीं अधिकारी है।
+वही उठा सकता है इसको, जो कठोर हो, कोमल भी,
+जिसमें हो धीरता, वीरता और तपस्या का बल भी।
+
+‘वीर वही है जो कि शत्रु पर जब भी खड्ग उठाता है,
+मानवता के महागुणों की सत्ता भूल न जाता है।
+सीमित जो रख सके खड्ग को, पास उसी को आने दो,
+विप्रजाति के सिवा किसी को मत तलवार उठाने दो।
+
+‘जब-जब मैं शर-चाप उठा कर करतब कुछ दिखलाता हूँ,
+सुनकर आशीर्वाद देव का, धन्य-धन्य हो जाता हूँ।
+‘जियो, जियो अय वत्स! तीर तुमने कैसा यह मारा है,
+दहक उठा वन उधर, इधर फूटी निर्झर की धारा है।
+
+‘मैं शंकित था, ब्राह्मा वीरता मेरे साथ मरेगी क्या,
+परशुराम की याद विप्र की जाति न जुगा धरेगी क्या?
+पाकर तुम्हें किन्तु, इस वन में, मेरा हृदय हुआ शीतल,
+तुम अवश्य ढोओगे उसको मुझमें है जो तेज, अनल।
+
+‘जियो, जियो ब्राह्मणकुमार! तुम अक्षय कीर्ति कमाओगे,
+एक बार तुम भी धरती को निःक्षत्रिय कर जाओगे।
+निश्चय, तुम ब्राह्मणकुमार हो, कवच और कुण्डल-धारी,
+तप कर सकते और पिता-माता किसके इतना भारी?
+
+‘किन्तु हाय! ‘ब्राह्मणकुमार’ सुन प्रण काँपने लगते हैं,
+मन उठता धिक्कार, हृदय में भाव ग्लानि के जगते हैं।
+गुरु का प्रेम किसी को भी क्या ऐसे कभी खला होगा?
+और शिष्य ने कभी किसी गुरु को इस तरह छला होगा?
+
+‘पर मेरा क्या दोष? हाय! मैं और दूसरा क्या करता,
+पी सारा अपमान, द्रोण के मैं कैसे पैरों पड़ता।
+और पाँव पड़ने से भी क्या गूढ़ ज्ञान सिखलाते वे,
+एकलव्य-सा नहीं अँगूठा क्या मेरा कटवाते वे?
+
+‘हाय, कर्ण, तू क्यों जन्मा था? जन्मा तो क्यों वीर हुआ?
+कवच और कुण्डल-भूषित भी तेरा अधम शरीर हुआ?
+धँस जाये वह देश अतल में, गुण की जहाँ नहीं पहचान?
+जाति-गोत्र के बल से ही आदर पाते हैं जहाँ सुजान?
+
+‘नहीं पूछता है कोई तुम व्रती, वीर या दानी हो?
+सभी पूछते मात्र यही, तुम किस कुल के अभिमानी हो?
+मगर, मनुज क्या करे? जन्म लेना तो उसके हाथ नहीं,
+चुनना जाति और कुल अपने बस की तो है बात नहीं।
+
+‘मैं कहता हूँ, अगर विधाता नर को मुठ्ठी में भरकर,
+कहीं छींट दें ब्रह्मलोक से ही नीचे भूमण्डल पर,
+तो भी विविध जातियों में ही मनुज यहाँ आ सकता है;
+नीचे हैं क्यारियाँ बनीं, तो बीज कहाँ जा सकता है?
+
+‘कौन जन्म लेता किस कुल में? आकस्मिक ही है यह बात,
+छोटे कुल पर, किन्तु यहाँ होते तब भी कितने आघात!
+हाय, जाति छोटी है, तो फिर सभी हमारे गुण छोटे,
+जाति बड़ी, तो बड़े बनें, वे, रहें लाख चाहे खोटे।’
+
+गुरु को लिए कर्ण चिन्तन में था जब मग्न, अचल बैठा,
+तभी एक विषकीट कहीं से आसन के नीचे पैठा।
+वज्रदंष्ट्र वह लगा कर्ण के उरु को कुतर-कुतर खाने,
+और बनाकर छिद्र मांस में मन्द-मन्द भीतर जाने।
+
+कर्ण विकल हो उठा, दुष्ट भौरे पर हाथ धरे कैसे,
+बिना हिलाये अंग कीट को किसी तरह पकड़े कैसे?
+पर भीतर उस धँसे कीट तक हाथ नहीं जा सकता था,
+बिना उठाये पाँव शत्रु को कर्ण नहीं पा सकता था।
+
+किन्तु, पाँव के हिलते ही गुरुवर की नींद उचट जाती,
+सहम गयी यह सोच कर्ण की भक्तिपूर्ण विह्वल छाती।
+सोचा, उसने, अतः, कीट यह पिये रक्त, पीने दूँगा,
+गुरु की कच्ची नींद तोड़ने का, पर पाप नहीं लूँगा।
+
+बैठा रहा अचल आसन से कर्ण बहुत मन को मारे,
+आह निकाले बिना, शिला-सी सहनशीलता को धारे।
+किन्तु, लहू की गर्म धार जो सहसा आन लगी तन में,
+परशुराम जग पड़े, रक्त को देख हुए विस्मित मन में।
+
+कर्ण झपट कर उठा इंगितों में गुरु से आज्ञा लेकर,
+बाहर किया कीट को उसने क्षत में से उँगली देकर।
+परशुराम बोले- ‘शिव! शिव! तूने यह की मूर्खता बड़ी,
+सहता रहा अचल, जाने कब से, ऐसी वेदना कड़ी।’
+
+तनिक लजाकर कहा कर्ण ने, ‘नहीं अधिक पीड़ा मुझको,
+महाराज, क्या कर सकता है यह छोटा कीड़ा मुझको?
+मैंने सोचा, हिला-डुला तो वृथा आप जग जायेंगे,
+क्षण भर को विश्राम मिला जो नाहक उसे गँवायेंगे।
+
+‘निश्चल बैठा रहा, सोच, यह कीट स्वयं उड़ जायेगा,
+छोटा-सा यह जीव मुझे कितनी पीड़ा पहुँचायेगा?
+पर, यह तो भीतर धँसता ही गया, मुझे हैरान किया,
+लज्जित हूँ इसीलिए कि सब-कुछ स्वयं आपने देख लिया।’
+
+परशुराम गंभीर हो गये सोच न जाने क्या मन में,
+फिर सहसा क्रोधाग्नि भयानक भभक उठी उनके तन में।
+दाँत पीस, आँखें तरेरकर बोले- ‘कौन छली है तू?
+ब्राह्मण है या और किसी अभिजन का पुत्र बली है तू?
+
+‘सहनशीलता को अपनाकर ब्राह्मण कभी न जीता है,
+किसी लक्ष्य के लिए नहीं अपमान-हलाहल पीता है।
+सह सकता जो कठिन वेदना, पी सकता अपमान वही,
+बुद्धि चलाती जिसे, तेज का कर सकता बलिदान वही।
+
+‘तेज-पुञ्ज ब्राह्मण तिल-तिल कर जले, नहीं यह हो सकता,
+किसी दशा में भी स्वभाव अपना वह कैसे खो सकता?
+कसक भोगता हुआ विप्र निश्चल कैसे रह सकता है?
+इस प्रकार की चुभन, वेदना क्षत्रिय ही सह सकता है।
+
+‘तू अवश्य क्षत्रिय है, पापी! बता, न तो, फल पायेगा,
+परशुराम के कठिन शाप से अभी भस्म हो जायेगा।’
+
+‘क्षमा, क्षमा हे देव दयामय!’ गिरा कर्ण गुरु के पद पर,
+मुख विवर्ण हो गया, अंग काँपने लगे भय से थर-थर!
+‘सूत-पूत्र मैं शूद्र कर्ण हूँ, करुणा का अभिलाषी हूँ,
+जो भी हूँ, पर, देव, आपका अनुचर अन्तेवासी हूँ
+
+‘छली नहीं मैं हाय, किन्तु छल का ही तो यह काम हुआ,
+आया था विद्या-संचय को, किन्तु, व्यर्थ बदनाम हुआ।
+‘बड़ा लोभ था, बनूँ शिष्य मैं कार्त्तवीर्य के जेता का,
+तपोदीप्त शूरमा, विश्व के नूतन धर्म-प्रणेता का।
+
+‘पर, शंका थी मुझे, सत्य का अगर पता पा जायेंगे,
+महाराज मुझ सूत-पुत्र को कुछ भी नहीं सिखायेंगे।
+‘बता सका मैं नहीं इसी से प्रभो! जाति अपनी छोटी,
+करें देव विश्वास, भावना और न थी कोई खोटी।
+
+‘पर इतने से भी लज्जा में हाय, गड़ा-सा जाता हूँ,
+मारे बिना हृदय में अपने-आप मरा-सा जाता हूँ।
+‘छल से पाना मान जगत् में किल्विष है, मल ही तो है,
+ऊँचा बना आपके आगे, सचमुच यह छल ही तो है।
+
+‘पाता था सम्मान आज तक दानी, व्रती, बली होकर,
+अब जाऊँगा कहाँ स्वयं गुरु के सामने छली होकर?
+‘करें भस्म ही मुझे देव! सम्मुख है मस्तक नत मेरा,
+एक कसक रह गयी, नहीं पूरा जीवन का व्रत मेरा।
+
+‘गुरु की कृपा! शाप से जलकर अभी भस्म हो जाऊँगा,
+पर, मदान्ध अर्जुन का मस्तक देव! कहाँ मैं पाऊँगा?
+‘यह तृष्णा, यह विजय-कामना, मुझे छोड़ क्या पायेगी?
+प्रभु, अतृप्त वासना मरे पर भी मुझे को भरमायेगी।
+
+‘दुर्योधन की हार देवता! कैसे सहन करूँगा मैं?
+अभय देख अर्जुन को मरकर भी तो रोज मरूँगा मैं?
+‘परशुराम का शिष्य कर्ण, पर, जीवन-दान न माँगेगा,
+बड़ी शान्ति के साथ चरण को पकड़ प्राण निज त्यागेगा।
+
+‘प्रस्तुत हूँ, दें शाप, किन्तु अन्तिम सुख तो यह पाने दें,
+इन्हीं पाद-पद्मों के ऊपर मुझको प्राण गँवाने दें।’
+
+लिपट गया गुरु के चरणों से विकल कर्ण इतना कहकर,
+दो कणिकाएँ गिरीं अश्रु की गुरु की आँखों से बह कर।
+बोले- ‘हाय, कर्ण तू ही प्रतिभट अर्जुन का नामी है?
+निश्चल सखा धार्तराष्ट्रों का, विश्व-विजय का कामी है?
+
+‘अब समझा, किसलिए रात-दिन तू वैसा श्रम करता था,
+मेरे शब्द-शब्द को मन में क्यों सीपी-सा धरता था।
+देखें अगणित शिष्य, द्रोण को भी करतब कुछ सिखलाया,
+पर तुझ-सा जिज्ञासु आज तक कभी नहीं मैंने पाया।
+
+‘तू ने जीत लिया था मुझको निज पवित्रता के बल से,
+क्या था पता, लूटने आया है कोई मुझको छल से?
+किसी और पर नहीं किया, वैसा सनेह मैं करता था,
+सोने पर भी धनुर्वेद का, ज्ञान कान में भरता था।
+
+‘नहीं किया कार्पण्य, दिया जो कुछ था मेरे पास रतन,
+तुझमें निज को सौंप शान्त हो, अभी-अभी प्रमुदित था मन।
+पापी, बोल अभी भी मुख से, तू न सूत, रथचालक है,
+परशुराम का शिष्य विक्रमी, विप्रवंश का बालक है।
+
+‘सूत-वंश में मिला सूर्य-सा कैसे तेज प्रबल तुझको?
+किसने लाकर दिये, कहाँ से कवच और कुण्डल तुझको?
+सुत-सा रखा जिसे, उसको कैसे कठोर हो मारूँ मैं?
+जलते हुए क्रोध की ज्वाला, लेकिन कहाँ उतारूँ मैं?’
+
+पद पर बोला कर्ण, ‘दिया था जिसको आँखों का पानी,
+करना होगा ग्रहण उसी को अनल आज हे गुरु ज्ञानी।
+बरसाइये अनल आँखों से, सिर पर उसे सँभालूँगा,
+दण्ड भोग जलकर मुनिसत्तम! छल का पाप छुड़ा लूँगा।’
+
+परशुराम ने कहा-‘कर्ण! तू बेध नहीं मुझको ऐसे,
+तुझे पता क्या सता रहा है मुझको असमञ्जस कैसे?
+पर, तूने छल किया, दण्ड उसका, अवश्य ही पायेगा,
+परशुराम का क्रोध भयानक निष्फल कभी न जायेगा।
+
+‘मान लिया था पुत्र, इसी से, प्राण-दान तो देता हूँ,
+पर, अपनी विद्या का अन्तिम चरम तेज हर लेता हूँ।
+सिखलाया ब्रह्मास्त्र तुझे जो, काम नहीं वह आयेगा,
+है यह मेरा शाप, समय पर उसे भूल तू जायेगा।’
+
+कर्ण विकल हो खड़ा हुआ कह, ‘हाय! किया यह क्या गुरुवर?
+दिया शाप अत्यन्त निदारुण, लिया नहीं जीवन क्यों हर?
+वर्षों की साधना, साथ ही प्राण नहीं क्यों लेते हैं?
+अब किस सुख के लिए मुझे धरती पर जीने देते हैं?’
+
+परशुराम ने कहा- ‘कर्ण! यह शाप अटल है, सहन करो,
+जो कुछ मैंने कहा, उसे सिर पर ले सादर वहन करो।
+इस महेन्द्र-गिरि पर तुमने कुछ थोड़ा नहीं कमाया है,
+मेरा संचित निखिल ज्ञान तूने मझसे ही पाया है।
+
+‘रहा नहीं ब्रह्मास्त्र एक, इससे क्या आता-जाता है?
+एक शस्त्र-बल से न वीर, कोई सब दिन कहलाता है।
+नयी कला, नूतन रचनाएँ, नयी सूझ नूतन साधन,
+नये भाव, नूतन उमंग से, वीर बने रहते नूतन।
+
+‘तुम तो स्वयं दीप्त पौरुष हो, कवच और कुण्डल-धारी,
+इनके रहते तुम्हें जीत पायेगा कौन सुभट भारी।
+अच्छा लो वर भी कि विश्व में तुम महान् कहलाओगे,
+भारत का इतिहास कीर्ति से और धवल कर जाओगे।
+
+‘अब जाओ, लो विदा वत्स, कुछ कड़ा करो अपने मन को,
+रहने देते नहीं यहाँ पर हम अभिशप्त किसी जन को।
+हाय छीनना पड़ा मुझी को, दिया हुआ अपना ही धन,
+सोच-सोच यह बहुत विकल हो रहा, नहीं जानें क्यों मन?
+
+‘व्रत का, पर निर्वाह कभी ऐसे भी करना होता है।
+इस कर से जो दिया उसे उस कर से हरना होता है।
+अब जाओ तुम कर्ण! कृपा करके मुझको निःसंग करो।
+देखो मत यों सजल दृष्टि से, व्रत मेरा मत भंग करो।
+
+‘आह, बुद्धि कहती कि ठीक था, जो कुछ किया, परन्तु हृदय,
+मुझसे कर विद्रोह तुम्हारी मना रहा, जाने क्यों, जय?
+अनायास गुण-शील तुम्हारे, मन में उगते आते हैं,
+भीतर किसी अश्रु-गंगा में मुझे बोर नहलाते हैं।
+
+जाओ, जाओ कर्ण! मुझे बिलकुल असंग हो जाने दो
+बैठ किसी एकान्त कुंज में मन को स्वस्थ बनाने दो।
+भय है, तुम्हें निराश देखकर छाती कहीं न फट जाये,
+फिरा न लूँ अभिशाप, पिघलकर वाणी नहीं उलट जाये।’
+
+इस प्रकार कह परशुराम ने फिरा लिया आनन अपना,
+जहाँ मिला था, वहीं कर्ण का बिखर गया प्यारा सपना।
+छूकर उनका चरण कर्ण ने अर्घ्य अश्रु का दान किया,
+और उन्हें जी-भर निहार कर मंद-मंद प्रस्थान किया।
+
+परशुधर के चरण की धूलि लेकर,
+उन्हें, अपने हृदय की भक्ति देकर,
+निराशा सेविकल, टूटा हुआ-सा,
+किसी गिरि-श्रृंगा से छूटा हुआ-सा,
+चला खोया हुआ-सा कर्ण मन में,
+कि जैसे चाँद चलता हो गगन में।
+
+
+                `
+            },
+
+            {
+                title:"कुरुक्षेत्र",
+
+                text:`
+क्षमा शोभती उस भुजंग को जिसके पास गरल हो,
+उसका क्या जो दंतहीन विषरहित विनीत सरल हो।
+तीन दिवस तक पंथ मांगते रघुपति सिंधु किनारे,
+बैठे पढ़ते रहे छन्द अनुनय के प्यारे-प्यारे।
+उत्तर में जब एक नाद भी उठा नहीं सागर से,
+उठी अधीर धधक पौरुष की आग राम के शर से।
+सहनशीलता, क्षमा, दया को तभी पूजता जग है,
+बल का दर्प चमकता उसके पीछे जब जगमग है।
+Meaning:
+ Forgiveness suits a snake that has venom, not one that is toothless, weak, and harmless. Lord Rama requested the ocean for a path for three days,
+ but it only responded when Rama picked up his fiery bow in anger. The world worships tolerance and mercy only when backed by the glow of power.
+ The Illusion of False Peace (Third Canto)Dinkar boldly critiques a peace that is built on the oppression of the poor and weak, viewing such "quietness" as a crime.
+ 
+ समर निंद्य है धर्मराज, पर, कहो, शान्ति वह क्या है,जो अनीति पर स्थित होकर भी बनी हुई सरला है?
+ सुख-समृद्धि का विपुल कोष संचित कर कल, बल, छल से,किसी क्षुधित का ग्रास छीन, धन लूट किसी निर्बल से।सब समेट, 
+ प्रहरी बिठला कर कहती कुछ मत बोलो,शान्ति-सुधा बह रही, न इसमें गरल क्रान्ति का घोलो।
+ 
+ Meaning:
+  War is condemnable, but what kind of peace is built on injustice? A peace where the powerful steal food from the hungry, guard their stolen wealth, and tell the oppressed to stay quiet in the name of harmony is no peace at all.
+  Righteousness of Fighting for One's RightsDinkar argues that choosing to fight against absolute evil and tyranny is not a sin, but a supreme moral duty.
+  
+  किसने कहा, पाप है समुचित स्वत्व-प्राप्ति-हित लड़ना?उठा न्याय का खड्ग समर में अभय मारना-मरना?
+  Meaning:
+   Who says it is a sin to fight to reclaim your rightful ownership? Raising the sword of justice on the battlefield to fearlessly kill or be killed is a righteous act.
+   The True Measure of Sin and VirtueIn this verse, Dinkar explains that an action cannot be judged purely on face value; the core intention behind the action defines its morality.
+   
+   क्योंकि कोई कर्म है ऐसा नहीं,जो स्वयं ही पुण्य हो या पाप हो।सत्य ही भगवान ने उस दिन कहा,मुख्य है कर्त्ता-हृदय की भावना।
+   Meaning:
+    No single action is inherently a virtue or a sin on its own. Lord Krishna truly said on the battlefield that the ultimate truth lies within the intent and emotion of the person performing the deed.
+                `
+            }
+        ]
+    },
+
+
+    {
+        name:"हरिवंश राय बच्चन",
+        title:"प्रसिद्ध हिंदी कवि",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5NHdryTN9RThK5wU0KoQdHH-gOazdMjyEW24jsSefgg&s=10",
+
+        poems:[
+            {
+                title:"मधुशाला",
+
+                text:`
+1. On Finding Your Path in Life (Most Famous Verse)This verse encourages people who are confused by different advice to choose one path in life with determination to reach their destination.
+
+"मदिरालय जाने को घर से चलता है पीनेवाला,'किस पथ से जाऊँ?' असमंजस में है वह भोलाभाला,
+अलग-अलग पथ बतलाते सब पर मैं यह बतलाता हूँ —'राह पकड़ तू एक चला चल, पा जाएगा मधुशाला।'
+
+"Meaning: A person leaves home to find the tavern but is confused about which path to choose. 
+Everyone suggests a different direction, but the poet gives one ultimate truth: choose any single path and stick to it, you will eventually find your destination.
+
+2. On Secularism and Human UnityThis line is widely quoted across India to emphasize religious harmony and how man-made barriers divide people, while common humanity unites them.
+
+"मुसलमान औ' हिन्दू है दो, एक, मगर, उनका प्याला,एक, मगर, उनका मदिरालय, एक, मगर, उनकी हाला,बैर कराते मंदिर-मस्जिद, मेल कराती मधुशाला!
+
+"Meaning: Hindus and Muslims may seem different, but they share the same life and world. Temples and mosques often cause divisions and conflicts among people, but the tavern (representing common human gathering and love) brings everyone together as equals.
+
+3. On Rising Above Religious DogmaHere, Bachchan welcomes those who have broken free from the rigid bindings of societal rituals and religious orthodoxies.
+
+"धर्मग्रन्थ सब जला चुकी है, जिसके अंतर की ज्वाला,मंदिर, मस्जिद, गिरिजे, सब को तोड़ चुका जो मतवाला,पंडित, मोमिन, पादरियों के फंदों को जो काट चुका,कर सकती है आज उसी का स्वागत मेरी मधुशाला।
+
+"Meaning: The inner fire of truth has consumed all rigid scriptural doctrines. The free-thinker who has broken away from the constraints of temples, mosques, churches, and the traps of religious leaders is the one truly welcomed into this tavern of ultimate truth.
+
+4. Celebrating Every Day of LifeThis beautiful verse reminds us that life is too short to be spent in sadness, and we should celebrate every single day."एक बरस में, एक बार ही जगती होली की ज्वाला,एक बार ही लगती बाज़ी, जलती दीपों की माला,दुनियावालों, किन्तु, किसी दिन आ मदिरालय में देखो,दिन को होली, रात दिवाली, रोज़ मनाती मधुशाला!"Meaning: In the outer world, the festival of Holi comes only once a year, and Diwali lamps are lit just once. 
+But if you step into the metaphorical tavern of a joyful life, you will experience a celebratory Holi during the day and a festive Diwali every single night.
+
+                `
+            },
+
+            {
+                title:"अग्निपथ",
+
+                text:`Original Hindi Verses
+
+                वृक्ष हों भले खड़े,
+                 हों घने हों बड़े,
+                एक पत्र छाँह भी, माँग मत, माँग मत, माँग मत,
+                अग्निपथ अग्निपथ अग्निपथ।
+                तू न थकेगा कभी, तू न रुकेगा कभी, तू न मुड़ेगा कभी,
+                कर शपथ, कर शपथ, कर शपथ,
+                अग्निपथ अग्निपथ अग्निपथ।
+                यह महान दृश्य है, चल रहा मनुष्य है,
+                अश्रु स्वेद रक्त से,
+                 लथपथ लथपथ लथपथ,
+                 अग्निपथ अग्निपथ अग्निपथ।
+
+
+                `
+            }
+        ]
+    },
+
+
+    {
+        name:"कबीर दास",
+        title:"संत कवि",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXgAwrNkgkZtgbjNTiyKst5kAe5wlRytlNOOwsQHZlXg&s=10",
+
+        poems:[
+            {
+                title:"बुरा जो देखन मैं चला",
+
+                text:`
+
+
+बुरा जो देखन मैं चला, बुरा न मिलिया कोय।
+जो दिल खोजा आपना, मुझसे बुरा न कोय॥
+ कबीरदास जी कहते हैं कि जब मैं इस संसार में बुरे या गलत लोगों को ढूँढने निकला, 
+तो मुझे एक भी बुरा व्यक्ति नहीं मिला। 
+
+लेकिन जब मैंने अपने ही मन और दिल के भीतर झाँककर देखा, तो पाया कि इस दुनिया में मुझसे बुरा कोई नहीं है।
+ इसका अर्थ है कि हमें दूसरों की कमियाँ खोजने के बजाय अपनी कमियों को सुधारना चाहिए।
+ 
+ Kabir says, "I went looking for evil or bad people in the world,
+  but I found not a single one. 
+ When I looked within and searched my own heart/mind, I realized that there is no one worse than me.
+
+ "If you like, we can explore more famous dohas by Kabir Das or look at his life philosophy together. 
+ Let me know how you'd like to proceed!
+
+                `
+            },
+
+            {
+                title:"कबीर के प्रसिद्ध दोहे",
+
+                text:`1. On Time Management and Procrastination
+                
+                काल करे सो आज कर, आज करे सो अब ।
+                पल में प्रलय होएगी,बहुरि करेगा कब।।
+
+                  कबीर दास जी कहते हैं कि जो काम कल करना है उसे आज करो, और जो आज करना है उसे अभी करो.
+                   यदि एक पल में प्रलय (संकट या अंत) आ गई, तो तुम अपना काम कब पूरा करोगे?
+                   
+                Do tomorrow's work today, and today's work right now. 
+                If a moment of destruction or the end comes unexpectedly,
+                 when will you find the time to finish it?
+                 
+                 2. On Speech and Kindness
+
+ऐसी वाणी बोलिए, मन का आपा खोए ।
+अपना तन शीतल करे, औरन को सुख होए।।
+ ॥Hindi Meaning:
+  हमें अपने अहंकार को त्यागकर ऐसी मधुर भाषा बोलनी चाहिए जिससे सुनने वाले को खुशी मिले. 
+ इससे हमारा खुद का मन भी शांत रहेगा और दूसरों को भी सुख पहुंचेग.
+ 
+ Speak words of sweetness by letting go of your ego.
+  Such gentle speech keeps your own mind calm and brings peace and joy to others.
+ 
+ 3. On Self-Reflection and Judgment
+
+ बुरा जो देखन मैं चला, बुरा न मिलिया कोय ।
+ जो दिल खोजा आपना, मुझसे बुरा न कोय ॥
+
+  जब मैं इस दुनिया में कमियाँ या बुरे लोग ढूंढने निकला, तो मुझे कोई भी बुरा नहीं मिला.
+   लेकिन जब मैंने अपने खुद के मन में झांक कर देखा, तो मुझे एहसास हुआ कि मुझसे बुरा और कोई नहीं है.
+  
+  When I set out searching for bad people, I could find none. 
+  But when I looked deep within my own heart,
+   I realized there is no one worse than myself.
+   
+   4. On Remembering God in Prosperity
+
+  दुख में सुमिरन सब करे, सुख में करे न कोई ।जो सुख में सुमिरन करे, तो दुख काहे को होय 
+
+  ॥Hindi Meaning:
+   संकट या दुख के समय हर इंसान भगवान को याद करता है, लेकिन सुख के दिनों में कोई उन्हें याद नहीं रखता.
+    यदि कोई व्यक्ति सुख के समय भी ईश्वर को याद रखे, तो उसके जीवन में दुख आएगा ही क्यों?
+  
+   Everyone remembers God during times of sorrow, but no one remembers Him in times of joy. If you remember Him during your happy moments, why would sorrow ever touch you?
+   
+   5. On Patience
+   
+   धीरे-धीरे रे मना, धीरे सब कुछ होय ।
+   माली सींचे सौ घड़ा, ऋतु आए फल होय ॥
+   Hindi Meaning:
+    हे मन! धैर्य रखो, सब काम धीरे-धीरे अपने समय पर ही होते हैं. 
+    जैसे माली चाहे पेड़ को सौ घड़े पानी से क्यों न सींच दे, लेकिन फल तो सिर्फ सही मौसम आने पर ही लगते हैं.
+    
+    English Meaning: O mind, have patience; everything happens gradually at its own pace. 
+    Even if a gardener pours a hundred pots of water into a tree, it will bear fruit only when the right season arrives.
+    
+    6. On True Knowledge and Love
+    
+    पोथी पढ़ि पढ़ि जग मुआ, पंडित भया न कोय ।
+    ढाई आखर प्रेम का, पढ़े सो पंडित होय ॥
+    Hindi Meaning: बड़ी-बड़ी किताबें और शास्त्र पढ़-पढ़कर दुनिया के कितने ही लोग चले गए,
+     लेकिन कोई सच्चा ज्ञानी नहीं बन पाया. जो व्यक्ति केवल 'प्रेम' के ढाई अक्षरों को अच्छी तरह समझ ले, वही असली ज्ञानी है.
+     English Meaning: Reading endless books and scriptures will not make anyone wise or enlightened.
+      But the one who understands the true essence of love is the genuinely wise person.
+                `
+            }
+        ]
+    },
+
+
+    {
+        name:"सूर्यकांत त्रिपाठी निराला",
+        title:"महान हिंदी कवि",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFfe-BHK8_Y2KFFsTm6lSHIUsK8uRNhauWayX5lbQRw&s=10",
+
+        poems:[
+            {
+                title:"राम की शक्ति पूजा",
+
+                text:`"दिक् जीवन जो पाता ही आया है विरोध,
+                दिक् साधन जिसके लिए सदा ही किया शोध!
+                होगी जय, होगी जय, हे पुरुषोत्तम नवीन!
+                "कह महाशक्ति राम के वदन में हुई लीन 
+                दिक् जीवन जो पाता ही आया है विरोध...: 
+                
+                श्री राम अत्यंत भावुक होकर अपने जीवन को धिक्कारते हैं। वे सोचते हैं कि उनके पूरे जीवन में केवल संघर्ष और विरोध ही लिखा रहा (जैसे माता कैकेयी का वरदान, वनवास, और अब सीता हरण)। वे अपने उन साधनों और प्रयासों को भी धिक्कारते हैं, जो हमेशा अंत समय पर निष्फल प्रतीत होते हैं।होगी जय, होगी जय...: 
+                 राम अपनी आंख का कमल देवी को अर्पित करने चलते हैं, 
+                 तब महाशक्ति (देवी दुर्गा) प्रकट होती हैं। वे राम की परीक्षा और अगाध भक्ति से प्रसन्न होकर घोषित करती हैं कि 
+                 "हे आधुनिक श्रेष्ठ पुरुष (राम), तुम्हारी विजय निश्चित है!" ऐसा कहकर महाशक्ति श्री राम के मुख (व्यक्तित्व) में समाहित हो जाती हैं।
+                 
+                 Fie upon this life, which has only encountered resistance...": Rama, in a moment of deep existential crisis, condemns his own life for being a continuous saga of obstacles. He laments that despite his righteous means and constant search for virtuous paths, his efforts are perpetually met with opposition."Victory shall be yours, O Supreme New Man!": At the climax of his intense penance, when Rama prepares to sacrifice his own eye as a final offering, Goddess Durga manifests. She stops him, reassures him of his ultimate victory over evil, and merges her divine energy into Rama's being, restoring his cosmic strength.
+
+                `
+            },
+
+            {
+                title:"ध्वनि",
+
+                text:`
+"अभी न होगा मेरा अंतअभी-अभी ही तो आया हैमेरे वन में मृदुल वसंत—अभी न होगा मेरा 
+
+कवि अत्यंत आत्मविश्वास के साथ कहते हैं कि उनके जीवन का अंत अभी नहीं हो सकता। उनके जीवन रूपी उपवन (बगीचे) में अभी-अभी ही वसंत (युवावस्था और नए उत्साह) का आगमन हुआ है। इसलिए, अभी उनका अंत होना असंभव है। वे अपने जीवन में सकारात्मक ऊर्जा के साथ आगे बढ़ना चाहते हैं।
+
+ The poet confidently asserts that his end is not near. A gentle spring (symbolizing youth, hope, and new energy) has just arrived in the forest of his life. Therefore, it is impossible for his journey to end right now, as he has much more to achieve and contribute.
+
+🌿 प्रकृति और युवा पीढ़ी (Nature and Youth Lines)"हरे-हरे ये पात,डालियाँ, कलियाँ, कोमल गात!मैं ही अपना स्वप्न-मृदुल-करफेरूँगा निद्रित कलियों परजगह एक प्रत्यूष मनोहर।
+
+"हिंदी भावार्थ (Hindi Meaning)वसंत आने पर चारों तरफ पेड़ों पर हरे-हरे पत्ते, कोमल डालियाँ और कलियाँ खिल गई हैं। कवि कहते हैं कि जो कलियाँ अभी सोई हुई हैं (अर्थात जो युवा आलस्य में डूबे हैं), मैं अपने सपनों जैसे कोमल हाथों को उन पर फेरकर उन्हें जगाऊँगा। मैं उनके जीवन में एक नई, सुंदर और मनभावन सुबह (सवेरा) लेकर आऊँगा।
+
+English MeaningWith the arrival of spring, green leaves, tender branches, and soft buds have bloomed everywhere. 
+The poet says that he will gently touch the sleeping buds (metaphor for lazy and hopeless youth) with his dream-like soft hands to awaken them. He aims to bring a beautiful, vibrant, and inspiring new dawn into their lives.
+
+🌺 प्रेरणा और उत्साह (Inspiration and Energy Lines)
+
+"पुष्प-पुष्प से तंद्रालस लालसा खींच लूँगा मैं,अपने नव जीवन का अमृत सहर्ष सींच दूँगा मैं।
+
+"हिंदी भावार्थ (Hindi Meaning)
+
+कवि कहते हैं कि मैं हर एक फूल (हर एक युवा) के भीतर से आलस्य और सुस्ती की इच्छा को पूरी तरह से खींच लूँगा।
+
+ मैं अपने नए जीवन के उत्साह रूपी अमृत से उन्हें ख़ुशी-ख़ुशी सींच दूँगा, ताकि वे जीवन में कभी निराश न हों और हमेशा महकते रहें।
+
+The poet promises to pluck away the drowsiness and laziness from every single flower (every youth). 
+He wants to joyfully nourish them with the nectar of his own vibrant, newly energized life, helping them flourish and stay motivated forever.
+
+                `
+            }
+        ]
+    },
+
+
+    {
+        name:"महादेवी वर्मा",
+        title:"छायावादी कवयित्री",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6BI992vPf82BkhUHNDkvZ6XWayi9jW-VJFueSbGg_vg&s=10",
+
+        poems:[
+            {
+                title:"मैं नीर भरी दुःख की बदली",
+
+                text:`
+यहाँ कविता paste करें।
+                `
+            },
+
+            {
+                title:"मधुर मधुर मेरे दीपक जल",
+
+                text:`
+यहाँ कविता paste करें।
+                `
+            }
+        ]
+    }
+
+];
+
+// RENDER
+
+const library = document.getElementById("library");
+const noResult = document.getElementById("noResult");
+
+function render(data){
+
+    library.innerHTML="";
+
+    noResult.style.display =
+        data.length ? "none" : "block";
+
+
+    data.forEach(writer=>{
+
+        const card=document.createElement("section");
+
+        card.className="writer";
+
+        card.innerHTML=`
+
+            <div class="writer-head">
+
+                <img
+                    src="${writer.img}"
+                    alt="${writer.name}"
+                >
+
+                <div>
+
+                    <h2>${writer.name}</h2>
+
+                    <p>${writer.title}</p>
+
+                    <button class="read">
+                        📖 Read Poems
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="poems">
+
+                ${writer.poems.map(poem=>`
+
+                    <button class="poem-btn">
+                        📜 ${poem.title}
+                    </button>
+
+                    <div class="poem">
+
+                        <h3>${poem.title}</h3>
+
+                        <p>${poem.text.replace(/\n/g,"<br>")}</p>
+
+                    </div>
+
+                `).join("")}
+
+            </div>
+
+        `;
+
+        library.appendChild(card);
+
+    });
+}
+
+
+/* FIRST LOAD */
+
+render(writers);
+
+// CLICK EVENTS
+
+library.addEventListener("click",function(e){
+
+    /* READ POEMS */
+
+    if(e.target.classList.contains("read")){
+
+        const poems =
+            e.target.closest(".writer")
+            .querySelector(".poems");
+
+        const open =
+            poems.style.display==="block";
+
+        poems.style.display =
+            open ? "none" : "block";
+
+        e.target.textContent =
+            open
+            ? "📖 Read Poems"
+            : "✕ Hide Poems";
+
+    }
+
+
+    /* POEM */
+
+    if(e.target.classList.contains("poem-btn")){
+
+        const poem =
+            e.target.nextElementSibling;
+
+        const open =
+            poem.style.display==="block";
+
+        poem.style.display =
+            open ? "none" : "block";
+
+    }
+
+});
+
+// SERACH 
+
+document.getElementById("search")
+.addEventListener("input",function(){
+
+    const q=this.value.toLowerCase().trim();
+
+    if(!q){
+
+        render(writers);
+        return;
+
+    }
+
+    const result=writers.filter(writer=>
+
+        writer.name.toLowerCase().includes(q) ||
+
+        writer.title.toLowerCase().includes(q) ||
+
+        writer.poems.some(poem=>
+
+            poem.title.toLowerCase().includes(q)
+
+        )
+
+    );
+
+    render(result);
+
+});
+
+</script>
+
+</body>
+</html>
+
