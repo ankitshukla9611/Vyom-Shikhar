@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VyomShikhar Website</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blogs.css">
+
+</head>
+
+<body>
+
+
+
+    <!-- navbar -->
+    <nav class="navbar">
+
+        <div class="left-side">
+            <img src="Radiant Learn Grow Succeed Emblem.png" class="logo" alt="VyomShikhar Logo">
+
+            <h1 class="brand-name">
+                VyomShikhar
+            </h1>
+
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#Courses">Courses</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="#Contact">Contact</a>
+        </div>
+    </nav>
+    <section class="Home" id="Home">
+        <!-- slider -->
+        <section class="slider-section">
+
+            <div class="slider-container">
+
+                <!-- Dots -->
+                <div class="dots"></div>
+
+                <!-- Buttons -->
+                <button class="btn prev">
+                    &#10094;
+                </button>
+
+                <button class="btn next">
+                    &#10095;
+                </button>
+
+                <!-- Slider -->
+                <div class="slider">
+
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                        <img src="Images/5th slider hindi.png" alt="Education Banner">
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <img src="Images/2nd slider technology.png" alt="Technology Banner">
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <img src="Images/3rd slider.png" alt="Learning Banner">
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="slide">
+                        <img src="Images/AI Future learing.png" alt="Hindi Learning Banner">
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="slide">
+                        <img src="Images/6th slider blog.png" alt="Blog Banner">
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="slide">
+                        <img src="Images/7th slider.png" alt="Village Education Banner">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </section>
+
+    <section class="About" id="About">
+        <!-- HERO SECTION -->
+        <div class="container">
+
+            <div class="left">
+                <img src="Images/intro image.png" class="hero-image" alt="VyomShikhar Introduction">
+            </div>
+
+            <div class="right">
+                <h1>VyomShikhar</h1>
+
+                <p>
+                    The platform introduces readers to emerging technologies,
+                    modern innovations, and digital advancements shaping the future.
+                    Through informative blogs and educational articles, VyomShikhar
+                    encourages curiosity, critical thinking, and awareness about
+                    scientific developments, technological progress, and the evolving
+                    online world in an engaging manner.
+                </p>
+
+                <p>
+                    VyomShikhar also celebrates Hindi poetry and literature that
+                    reflect human emotions, moral values, and life experiences.
+                    Poems and writing introduce readers to thoughtful ideas,
+                    ethical behavior, positive attitudes, and deeper perspectives
+                    that encourage self-awareness.
+                </p>
+
+                <p>
+                    This platform motivates individuals to develop creative thinking,
+                    practical skills, confidence, and self-discipline. By sharing
+                    inspirational content, VyomShikhar aims to strengthen
+                    problem-solving abilities and inspire personal development.
+                </p>
+
+                <button id="subscribeBtn" class="subscribe-btn">
+                    Subscribe Here
+                </button>
+
+                <!-- POPUP MODAL -->
+                <div id="subscribeModal" class="modal">
+                    <div class="modal-content">
+
+                        <span class="close">&times;</span>
+
+                        <h2>Subscribe to VyomShikhar</h2>
+
+                        <input type="text" placeholder="Enter Your Name">
+                        <input type="email" placeholder="Enter Your Email">
+
+                        <button id="submitBtn">Subscribe Now</button>
+
+                        <p id="successMessage"></p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GRID LAYOUT -->
+
+    <section class="course-section" id="Courses">
+
+        <div class="grid-container">
+
+            <!-- 1. Kavyashala -->
+            <div class="course-card">
+                <img src="Images/kavayshala.png" alt="Kavyashala">
+
+                <div class="card-content">
+                    <h2>Kavyashala</h2>
+                    <p>
+                        Jaishankar Prasad - "Aashu"<br>
+                        Harivansh Rai Bachchan - "Madhushala"<br>
+                        Premchand - Essays & Stories
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <span>Duration: 6 Months</span>
+                    <a href="kavayshala.html" target="_blank" class="enroll-btn">
+                        Explore Literature
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Book Addicted -->
+            <div class="course-card">
+                <img src="Images/book addicated.png" alt="Books">
+
+                <div class="card-content">
+                    <h2>Book Addicted</h2>
+                    <p>
+                        Novel Notes<br>
+                        Book Summary<br>
+                        Reading Collection
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <span>Duration: 4 Months</span>
+                    <a href="books.html" target="_blank" class="enroll-btn">
+                        Read Books
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. Technology Hub -->
+            <div class="course-card">
+                <img src="Images/tech_hub.png" alt="Technology Hub">
+
+                <div class="card-content">
+                    <h2>Technology Hub</h2>
+                    <p>
+                        AI Technology<br>
+                        Web Development<br>
+                        Programming Concepts
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <span>Duration: 8 Months</span>
+                    <a href="technology.html" target="_blank" class="enroll-btn">
+                        Start Learning
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. News & Innovations -->
+            <div class="course-card">
+                <img src="Images/news & innovations.png" alt="News and Innovations">
+
+                <div class="card-content">
+                    <h2>News & Innovations</h2>
+                    <p>
+                        Tech News<br>
+                        New Innovations<br>
+                        Future Discoveries
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <span>Duration: 4 Months</span>
+                    <a href="News & Innovations" target="_blank" class="enroll-btn">
+                        Explore News
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Enhance Skills -->
+            <div class="course-card">
+                <img src="Images/enhance skills.png" alt="Enhance Skills">
+
+                <div class="card-content">
+                    <h2>Enhance Skills</h2>
+                    <p>
+                        Communication Skills<br>
+                        English Practice<br>
+                        Personality Growth
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <span>Duration: 4 Months</span>
+                    <a href="skills.html" target="_blank" class="enroll-btn">
+                        Improve Skills
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. AI & Future Learning -->
+            <div class="course-card">
+                <img src="Images/AI Future learing.png" alt="AI Learning">
+
+                <div class="card-content">
+                    <h2>AI & Future Learning</h2>
+                    <p>
+                        AI Tools<br>
+                        Smart Education<br>
+                        Prompt Engineering
+                    </p>
+                </div>
+
+                <div class="card-footer">
+                    <span>Duration: 7 Months</span>
+                    <a href="ai-learning.html" target="_blank" class="enroll-btn">
+                        Learn AI
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT FORM -->
+
+    <section class="Contact" id="Contact">
+
+        <!-- FORM CONTAINER -->
+
+        <div class="form-wrapper">
+            <!-- HEADER -->
+            <div class="form-header">
+                <h1>Join VyomShikhar</h1>
+                <p>Create your profile and start your learing journey.
+                </p>
+            </div>
+
+            <div id="about-section"></div>
+
+
+
+            <!-- FORM -->
+
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                .form-container {
+                    max-width: 700px;
+                    margin: 30px auto;
+                    padding: 30px;
+                    background: #fff;
+                    border-radius: 18px;
+                    box-shadow: 0 8px 30px #24583b18;
+                    font-family: Arial, sans-serif;
+                }
+
+                .form-title {
+                    margin-bottom: 25px;
+                }
+
+                .form-title h2 {
+                    color: #176344;
+                    margin-bottom: 7px;
+                }
+
+                .form-title p {
+                    color: #888;
+                    font-size: 13px;
+                }
+
+                .form-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px 15px;
+                }
+
+                .field {
+                    position: relative;
+                }
+
+                .field input,
+                .field select,
+                .field textarea {
+                    width: 100%;
+                    padding: 14px 12px;
+                    border: 1px solid #dce7df;
+                    border-radius: 8px;
+                    outline: none;
+                    font-size: 13px;
+                    background: #fbfdfb;
+                }
+
+                .field label {
+                    position: absolute;
+                    left: 12px;
+                    top: 14px;
+                    font-size: 12px;
+                    color: #849188;
+                    pointer-events: none;
+                    transition: .2s;
+                    background: transparent;
+                }
+
+                .field input:focus,
+                .field textarea:focus,
+                .field select:focus {
+                    border-color: #29966a;
+                }
+
+                .field input:focus+label,
+                .field input:not(:placeholder-shown)+label,
+                .field textarea:focus+label,
+                .field textarea:not(:placeholder-shown)+label {
+                    top: -8px;
+                    left: 9px;
+                    background: white;
+                    padding: 0 5px;
+                    color: #21825b;
+                    font-size: 10px;
+                }
+
+                .field select {
+                    color: #637269;
+                    cursor: pointer;
+                }
+
+                .full {
+                    grid-column: 1 / -1;
+                }
+
+                .field textarea {
+                    min-height: 85px;
+                    resize: vertical;
+                }
+
+                .gender-box {
+                    padding: 12px;
+                    border: 1px solid #dce7df;
+                    border-radius: 8px;
+                    font-size: 12px;
+                }
+
+                .gender-title {
+                    color: #849188;
+                }
+
+                .gender-options {
+                    display: flex;
+                    gap: 12px;
+                    margin-top: 12px;
+                    flex-wrap: wrap;
+                }
+
+                .gender-options label {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    cursor: pointer;
+                }
+
+                .term {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 8px;
+                    font-size: 12px;
+                    color: #65736a;
+                }
+
+                .term input {
+                    accent-color: #21825b;
+                }
+
+                .term a {
+                    color: #21825b;
+                }
+
+                .submit-btn {
+                    width: 100%;
+                    margin-top: 22px;
+                    padding: 14px;
+                    background: linear-gradient(90deg, #176344, #38a477);
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: .3s;
+                }
+
+                .submit-btn:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 7px 18px #17634435;
+                }
+
+                .success-message {
+                    display: none;
+                    text-align: center;
+                    padding: 25px;
+                    color: #21825b;
+                    font-weight: bold;
+                    animation: show .5s ease;
+                }
+
+                @keyframes show {
+                    from {
+                        opacity: 0;
+                        transform: translateY(12px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @media(max-width: 550px) {
+                    .form-container {
+                        padding: 22px 16px;
+                    }
+
+                    .form-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .full {
+                        grid-column: auto;
+                    }
+                }
+            </style>
+            </head>
+
+            <body>
+
+                <section class="form-container">
+
+                    <div class="form-title">
+                        <h2>Registration Form</h2>
+                        <p>Please fill in your basic information.</p>
+                    </div>
+
+                    <form id="studentForm">
+
+                        <div class="form-grid">
+
+                            <div class="field">
+                                <input type="text" id="firstName" placeholder=" " required>
+                                <label for="firstName">First Name *</label>
+                            </div>
+
+                            <div class="field">
+                                <input type="text" id="lastName" placeholder=" " required>
+                                <label for="lastName">Last Name *</label>
+                            </div>
+
+                            <div class="field">
+                                <input type="date" id="dob">
+                                <label for="dob">Date of Birth</label>
+                            </div>
+
+                            <div class="gender-box">
+                                <span class="gender-title">Gender *</span>
+                                <div class="gender-options">
+                                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <input type="email" id="email" placeholder=" " required>
+                                <label for="email">Email Address *</label>
+                            </div>
+
+                            <div class="field">
+                                <input type="tel" id="mobile" placeholder=" " maxlength="10" pattern="[6-9][0-9]{9}"
+                                    required>
+                                <label for="mobile">Mobile Number *</label>
+                            </div>
+
+                            <div class="field">
+                                <input type="text" id="city" placeholder=" " required>
+                                <label for="city">City *</label>
+                            </div>
+
+                            <div class="field">
+                                <select id="state" required>
+                                    <option value="">Select State</option>
+                                    <option>Delhi</option>
+                                    <option>Uttar Pradesh</option>
+                                    <option>Rajasthan</option>
+                                    <option>Haryana</option>
+                                    <option>Madhya Pradesh</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <select id="education" required>
+                                    <option value="">Education / Qualification</option>
+                                    <option>Class 10</option>
+                                    <option>Class 12</option>
+                                    <option>Undergraduate</option>
+                                    <option>Postgraduate</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="field">
+                                <select id="interest" required>
+                                    <option value="">Interested Subject</option>
+                                    <option>Political Science</option>
+                                    <option>History</option>
+                                    <option>Sociology</option>
+                                    <option>Literature</option>
+                                    <option>Technology</option>
+                                    <option>Web Development</option>
+                                </select>
+                            </div>
+
+                            <div class="field full">
+                                <textarea id="message" placeholder=" "></textarea>
+                                <label for="message">Tell us about yourself</label>
+                            </div>
+
+                            <div class="term full">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">
+                                    I agree to the <a href="#">Terms & Conditions</a>
+                                    and Privacy Policy.
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Create My Profile →
+                        </button>
+
+                    </form>
+
+                    <div class="success-message" id="successMessage">
+                        ✓<h2>Registration Successful!</h2>
+                        <p>Welcome to VyomShikhar. Keep Learning, Keep Growing!</p>
+                    </div>
+
+                </section>
+
+                <script>
+                    const form = document.getElementById("studentForm");
+
+                    form.addEventListener("submit", function (e) {
+                        e.preventDefault();
+
+                        const dob = document.getElementById("dob").value;
+
+                        if (dob && new Date(dob) > new Date()) {
+                            alert("Date of Birth cannot be in the future.");
+                            return;
+                        }
+
+                        if (!form.checkValidity()) {
+                            form.reportValidity();
+                            return;
+                        }
+
+                        form.style.display = "none";
+                        document.getElementById("successMessage").style.display = "block";
+                    });
+                </script>
+
+
+
+    </section>
+
+
+    <!-- JavaScript: body ke end mein -->
+    <script src="blogs.js"></script>
+    <script src="function.js"></script>
+
+
+
+</body>
+
+</html>
